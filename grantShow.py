@@ -6,7 +6,6 @@ from datetime import datetime
 from time import sleep, time
 import threading
 
-
 class Show:
 	"""
 	The class that does all the work by starting up the various threads and connection to the AMI
@@ -123,6 +122,8 @@ class Show:
 			if self.waitToPress1(actorName, delay=30):
 				print datetime.now(), 'Success establishing call to', actorName
 			else:
+				#end the call and play a sound file
+                self.playback('main-menu', actorName)
 				self.manager.hangup(self.channel[actorName])
 				print datetime.now(), 'Call answered but', actorName, 'did not press 1 within 30 secs'
 		else:
