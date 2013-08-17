@@ -189,7 +189,7 @@ class Show:
 			self.eventsPlayEnd[actorName].wait()
 			print datetime.now(), "Playing audio file", filename, "to", actorName, ". Finished"
  
- 	def waitForDTMF(self, actorName, plan, delay=30):
+ 	def waitForDTMF(self, actorName, plan, delay=15):
  		start = end = time()
  		while end - start < delay:
  			self.eventsDTMF[actorName] = threading.Event()
@@ -201,6 +201,9 @@ class Show:
 			if self.eventsDTMF[actorName].is_set():
 				# check whether the pressed key is a valid option in our plan
 				if self.pressedDTMF[actorName] in plan:
+					#wait for time to run out and play a waiting file
+					self.playback('please-wait', actorName)
+					sleep(end-start)
 					return self.pressedDTMF[actorName]
 				else:
 					# a key was pressed but is not valid, ask again

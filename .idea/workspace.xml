@@ -7,7 +7,7 @@
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1376720407280" ignored="false" />
-    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1376720531190" ignored="false" />
+    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1376721618126" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +30,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="206" column="30" selection-start="8511" selection-end="8511" vertical-scroll-proportion="0.012727273">
+            <state line="204" column="46" selection-start="8479" selection-end="8479" vertical-scroll-proportion="0.22909091">
               <folding>
                 <element signature="e#31#54#0" expanded="true" />
               </folding>
@@ -344,7 +344,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="30" selection-start="8511" selection-end="8511" vertical-scroll-proportion="0.012727273">
+        <state line="204" column="46" selection-start="8479" selection-end="8479" vertical-scroll-proportion="0.22909091">
           <folding>
             <element signature="e#31#54#0" expanded="true" />
           </folding>
