@@ -14,25 +14,25 @@ class Show:
 		self.names = names
 		self.specialPhones = specialPhones
 		self.audioPlan = audioPlan
-				
+
 		# Dictionaries to hold important info on calls.
 		self.channel = {}	# Referenced with actor name as key
 		self.uniqueID = {}	# Referenced with actor name as key
 		self.actor = {}		# Referenced with uniqueID as key
 		self.actorFromChan = {} # Referenced with channel as key
-		
+
 		self._enoughPhonesCollected = threading.Event()
 		self._allActorsReady = threading.Event()
-		
-		# events to signify when calls are answered, DTMF tones received, and ending of audiofile 
+
+		# events to signify when calls are answered, DTMF tones received, and ending of audiofile
 		# playback These are dictionaries because there are multiple events, one for each actor.
 		self.eventsCallAnswer = {}
 		self.eventsDTMF = {}
 		self.eventsPlayEnd = {}
-		
+
 		# a dictionary to hold the last DTMF pressed, one entry for each actor
 		self.pressedDTMF = {}
-		
+
 		# the AMI manager to interact with Asterisk
 		self.manager = asterisk.manager.Manager()
 
@@ -40,7 +40,7 @@ class Show:
 		try:
 			self.manager.connect('127.0.0.1')
 			self.manager.login('admin', 'L1v3pupp3t5')
-    
+
 			# register some callbacks
 			self.manager.register_event('Shutdown', self.handle_shutdown) # shutdown
 			self.manager.register_event('NewCallerid', self.handle_NewCallerID)		# the NewCallerid events help us find out the channel and unique id of our call
@@ -48,7 +48,7 @@ class Show:
 			self.manager.register_event('AGIExec', self.handle_AGIExec)				# to know the end of playback
 			self.manager.register_event('DTMF', self.handle_DTMF)					# detected pressed keys
 			#self.manager.register_event('*', self.handle_event)			# catch all, for debug purposes
-			
+
 		except asterisk.manager.ManagerSocketException, (errno, reason):
 			print "Error connecting to the manager: %s" % reason
 			self.manager.close()
@@ -61,29 +61,29 @@ class Show:
 			print "Error: %s" % reason
 			self.manager.close()
 			sys.exit(1)
-		
-		
+
+
 	def begin(self, phones=[]):
-				
+
 		# First try to originate enough calls, and establish the connection is with a human
 		actorThreads = []
 		for phone, actorName in zip(phones, self.names):
 			t = threading.Thread(target=self._establishCall, args=(phone, actorName))
 			t.start()
 			actorThreads.append(t)
-			
+
 		# wait for all threads to finish before proceeding
 		for t in actorThreads:
 			t.join()
-			
+
 		# TO DO: check if we have enough succesfull calls, and if not try to establish more
 		#give some time for all the messages to arrive
 		sleep(1)
-		
+
 		# Then execute the plan period by period, synchronising the calls before every new period start
 		for period in self.audioPlan:
-			# reset actor Thread to empty	
-			actorThreads = []			
+			# reset actor Thread to empty
+			actorThreads = []
 			for actorName in period:
 				if actorName in self.channel:
 					# create a thread to handle this period for this actor. _execute_plan() does all
@@ -324,6 +324,10 @@ audioPlan = [
 {'Actor1': {'welcome':{1:None}},
  'Actor2': {'welcome':{1:None}},
  'Actor3': {'welcome':{1:None}},
+ 'Actor4': {'welcome':{1:None}},
+ 'Actor5': {'welcome':{1:None}},
+ 'Actor6': {'welcome':{1:None}},
+ 'Audience': {'welcome':{1:None}},
 },
 
 # period1
@@ -331,11 +335,19 @@ audioPlan = [
  'Actor2': {'tt-monty-knights':{1:'good', 2:{'enter-num-blacklist':{1:'press-1', 2:'press-2'}}}},
  'Actor3': {'different-file':None},
  'Actor4': {'tt-monty-knights':{'play-another-file':None}}
+ 'Actor5': {'different-file':None},
+ 'Actor6': {'different-file':None},
+ 'Audience': {'different-file':None},
 },
 
 #pediod2
 {'Actor1': {'goodbye':None},
  'Actor2': {'goodbye':None},
+ 'Actor3': {'goodbye':None},
+ 'Actor4': {'goodbye':None},
+ 'Actor5': {'goodbye':None},
+ 'Actor6': {'goodbye':None},
+ 'Audience': {'goodbye':None},
 }
 
 ]
