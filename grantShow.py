@@ -188,7 +188,7 @@ class Show:
 			self.eventsPlayEnd[actorName].wait()
 			print datetime.now(), "Playing audio file", filename, "to", actorName, ". Finished"
  
- 	def waitForDTMF(self, actorName, plan, delay=15):
+ 	def waitForDTMF(self, actorName, plan, delay=10):
  		start = end = time()
  		while end - start < delay:
  			self.eventsDTMF[actorName] = threading.Event()
@@ -357,4 +357,4 @@ show = Show(names, specialPhones, audioPlan)
 
 # begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
 #show.begin(['61296981940'])
-show.begin(['61412793562','61413817002', '61408325496','61413817002'])
+show.begin(['61412793562','61413817002', '61408325496','61404504804'])
