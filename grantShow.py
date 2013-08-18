@@ -118,7 +118,7 @@ class Show:
 		if self.eventsCallAnswer[actorName].is_set():
 			sleep(1)
 			# if the call is answered, ask for the actor to press 1, so we confirm is human
-			self.playback(directory,'press1', actorName)
+			self.playback('press1', actorName)
 			if self.waitToPress1(actorName, delay=30):
 				print datetime.now(), 'Success establishing call to', actorName
 			else:
@@ -175,7 +175,7 @@ class Show:
 	def playback(self, filename, actorName):
 		cdict = {'Action':'AGI'}
 		cdict['Channel'] = self.channel[actorName]
-		cdict['Command'] = 'EXEC Playback ' + filename
+		cdict['Command'] = 'EXEC Playback ' + (directory,filename)
 		cdict['CommandID'] = 'MyCommandID'
 		response = self.manager.send_action(cdict)
 		print datetime.now(), "Playing audio file", filename, "to", actorName, ". Start response:", response
@@ -321,19 +321,19 @@ If the DTMF tone pressed is not one of the options given, it will 'say please tr
 directory = "/home/ec2-user/grantShow/Audio/audio/"
 audioPlan = [
 # period0
-{'Actor1': {directory, 'lineup':None},
- 'Actor2': {directory, 'lineup':None},
- 'Actor3': {directory, 'lineup':None},
- 'Actor4': {directory, 'lineup':None},
- 'Actor5': {directory, 'lineup':None},
- 'Actor6': {directory, 'lineup':None},
- 'Audience': {directory, 'lineup':None},
+{'Actor1': {'chocolate':{1:None}},
+ 'Actor2': {'welcome':{1:None}},
+ 'Actor3': {'welcome':{1:None}},
+ 'Actor4': {'welcome':{1:None}},
+ 'Actor5': {'welcome':{1:None}},
+ 'Actor6': {'welcome':{1:None}},
+ 'Audience': {'welcome':{1:None}},
 },
 
 # period1
-{'Actor1': {directory, 'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor2': {directory, 'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor3': {directory, 'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+{'Actor1': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
+ 'Actor2': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
+ 'Actor3': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
  'Actor4': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
  'Actor5': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
  'Actor6': {'different-file':None},
@@ -341,9 +341,9 @@ audioPlan = [
 },
 
 #pediod2
-{'Actor1': {directory, 'end':None},
- 'Actor2': {directory, 'end':None},
- 'Actor3': {directory, 'end':None},
+{'Actor1': {'goodbye':None},
+ 'Actor2': {'goodbye':None},
+ 'Actor3': {'goodbye':None},
  'Actor4': {'goodbye':None},
  'Actor5': {'goodbye':None},
  'Actor6': {'goodbye':None},
