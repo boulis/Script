@@ -201,7 +201,7 @@ class Show:
 				# check whether the pressed key is a valid option in our plan
 				if self.pressedDTMF[actorName] in plan:
 					#wait for time to run out and play a waiting file
-					self.playback('please-wait', actorName)
+					self.playback('main-menu', actorName)
 					#sleep(end-start)
 					return self.pressedDTMF[actorName]
 				else:
