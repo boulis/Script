@@ -118,7 +118,7 @@ class Show:
 		if self.eventsCallAnswer[actorName].is_set():
 			sleep(1)
 			# if the call is answered, ask for the actor to press 1, so we confirm is human
-			self.playback('press-1', actorName)
+			self.playback(directory,'press1', actorName)
 			if self.waitToPress1(actorName, delay=30):
 				print datetime.now(), 'Success establishing call to', actorName
 			else:
@@ -321,19 +321,19 @@ If the DTMF tone pressed is not one of the options given, it will 'say please tr
 directory = "/home/ec2-user/grantShow/Audio/audio/"
 audioPlan = [
 # period0
-{'Actor1': {'chocolate':{1:None}},
- 'Actor2': {'welcome':{1:None}},
- 'Actor3': {'welcome':{1:None}},
- 'Actor4': {'welcome':{1:None}},
- 'Actor5': {'welcome':{1:None}},
- 'Actor6': {'welcome':{1:None}},
- 'Audience': {'welcome':{1:None}},
+{'Actor1': {directory, 'lineup':None},
+ 'Actor2': {directory, 'lineup':None},
+ 'Actor3': {directory, 'lineup':None},
+ 'Actor4': {directory, 'lineup':None},
+ 'Actor5': {directory, 'lineup':None},
+ 'Actor6': {directory, 'lineup':None},
+ 'Audience': {directory, 'lineup':None},
 },
 
 # period1
-{'Actor1': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
- 'Actor2': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
- 'Actor3': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
+{'Actor1': {directory, 'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Actor2': {directory, 'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Actor3': {directory, 'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
  'Actor4': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
  'Actor5': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
  'Actor6': {'different-file':None},
@@ -341,9 +341,9 @@ audioPlan = [
 },
 
 #pediod2
-{'Actor1': {'goodbye':None},
- 'Actor2': {'goodbye':None},
- 'Actor3': {'goodbye':None},
+{'Actor1': {directory, 'end':None},
+ 'Actor2': {directory, 'end':None},
+ 'Actor3': {directory, 'end':None},
  'Actor4': {'goodbye':None},
  'Actor5': {'goodbye':None},
  'Actor6': {'goodbye':None},
@@ -357,4 +357,4 @@ show = Show(names, specialPhones, audioPlan)
 
 # begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
 #show.begin(['61296981940'])
-show.begin(['61412793562','61413817002', '61408325496','61404504804','61403821997'])
+show.begin(['61413817002'])
