@@ -321,13 +321,13 @@ If the DTMF tone pressed is not one of the options given, it will 'say please tr
 directory = "/home/ec2-user/grantShow/Audio/audio/"
 audioPlan = [
 # period0
-{'Actor1': {'lineup':None}},
- 'Actor2': {'lineup':None}},
- 'Actor3': {'lineup':None}},
- 'Actor4': {'lineup':None}},
- 'Actor5': {'lineup':None}},
- 'Actor6': {'lineup':None}},
- 'Audience': {'lineup':None}},
+{'Actor1': {'lineup':None},
+ 'Actor2': {'lineup':None},
+ 'Actor3': {'lineup':None},
+ 'Actor4': {'lineup':None},
+ 'Actor5': {'lineup':None},
+ 'Actor6': {'lineup':None},
+ 'Audience': {'lineup':None},
 },
 
 # period1
