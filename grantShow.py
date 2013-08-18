@@ -321,7 +321,7 @@ If the DTMF tone pressed is not one of the options given, it will 'say please tr
 directory = "/home/ec2-user/grantShow/Audio/audio/"
 audioPlan = [
 # period0
-{'Actor1': {'chocolate':{1:None}},
+{'Actor1': {'welcome':{1:None}},
  'Actor2': {'welcome':{1:None}},
  'Actor3': {'welcome':{1:None}},
  'Actor4': {'welcome':{1:None}},
@@ -332,9 +332,9 @@ audioPlan = [
 
 # period1
 {'Actor1': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
- 'Actor2': {'tt-monty-knights':{1:'good', 2:{'enter-num-blacklist':{1:'press-1', 2:'press-2'}}}},
- 'Actor3': {'different-file':None},
- 'Actor4': {'tt-monty-knights':{'play-another-file':None}},
+ 'Actor2': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
+ 'Actor3': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
+ 'Actor4': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
  'Actor5': {'different-file':None},
  'Actor6': {'different-file':None},
  'Audience': {'different-file':None},
@@ -357,4 +357,4 @@ show = Show(names, specialPhones, audioPlan)
 
 # begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
 #show.begin(['61296981940'])
-show.begin(['61412793562'])
+show.begin(['61412793562','61413817002', '61408325496','61413817002'])
