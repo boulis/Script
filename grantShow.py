@@ -294,7 +294,7 @@ class Show:
     	
     	
 # names of the main characters, to make description of the plan and reporting easier
-names = ['Actor1','Actor2','Actor3','Actor4','Actor5','Actor6'] 
+names = ['Actor1','Actor2','Actor3','Actor4','Actor5','Actor6','Audience']
 # the phones that we can call from to begin the main show. Add as many as you like
 specialPhones = ['61439588446', '61413817002']
 
@@ -334,7 +334,7 @@ audioPlan = [
 {'Actor1': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
  'Actor2': {'tt-monty-knights':{1:'good', 2:{'enter-num-blacklist':{1:'press-1', 2:'press-2'}}}},
  'Actor3': {'different-file':None},
- 'Actor4': {'tt-monty-knights':{'play-another-file':None}}
+ 'Actor4': {'tt-monty-knights':{'play-another-file':None}},
  'Actor5': {'different-file':None},
  'Actor6': {'different-file':None},
  'Audience': {'different-file':None},
