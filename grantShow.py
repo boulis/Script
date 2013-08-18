@@ -335,7 +335,7 @@ audioPlan = [
  'Actor2': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
  'Actor3': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
  'Actor4': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
- 'Actor5': {'different-file':None},
+ 'Actor5': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
  'Actor6': {'different-file':None},
  'Audience': {'different-file':None},
 },
@@ -357,4 +357,4 @@ show = Show(names, specialPhones, audioPlan)
 
 # begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
 #show.begin(['61296981940'])
-show.begin(['61412793562','61413817002', '61408325496','61404504804'])
+show.begin(['61412793562','61413817002', '61408325496','61404504804','61403821997'])
