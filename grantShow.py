@@ -202,7 +202,7 @@ class Show:
 				if self.pressedDTMF[actorName] in plan:
 					#wait for time to run out and play a waiting file
 					self.playback('please-wait', actorName)
-					sleep(end-start)
+					#sleep(end-start)
 					return self.pressedDTMF[actorName]
 				else:
 					# a key was pressed but is not valid, ask again
