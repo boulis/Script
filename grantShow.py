@@ -321,7 +321,7 @@ If the DTMF tone pressed is not one of the options given, it will 'say please tr
 directory = "/home/ec2-user/grantShow/Audio/audio/"
 audioPlan = [
 # period0
-{'Actor1': {[directory]'chocolate':{1:None}},
+{'Actor1': {'/home/ec2-user/grantShow/Audio/audio/chocolate':{1:None}},
  'Actor2': {'welcome':{1:None}},
  'Actor3': {'welcome':{1:None}},
  'Actor4': {'welcome':{1:None}},
