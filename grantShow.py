@@ -123,7 +123,6 @@ class Show:
 				print datetime.now(), 'Success establishing call to', actorName
 			else:
 				#end the call and play a sound file
-                self.playback('main-menu', actorName)
 				self.manager.hangup(self.channel[actorName])
 				print datetime.now(), 'Call answered but', actorName, 'did not press 1 within 30 secs'
 		else:
