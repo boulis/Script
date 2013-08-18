@@ -321,7 +321,7 @@ If the DTMF tone pressed is not one of the options given, it will 'say please tr
 directory = "/home/ec2-user/grantShow/Audio/audio/"
 audioPlan = [
 # period0
-{'Actor1': {'end':None},
+{'Actor1': {'lineup':None},
  'Actor2': {'lineup':None},
  'Actor3': {'lineup':None},
  'Actor4': {'lineup':None},
@@ -357,4 +357,4 @@ show = Show(names, specialPhones, audioPlan)
 
 # begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
 #show.begin(['61296981940'])
-show.begin(['61413817002'])
+show.begin(['61413817002','61404504804'])
