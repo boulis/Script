@@ -321,33 +321,33 @@ If the DTMF tone pressed is not one of the options given, it will 'say please tr
 directory = "/home/ec2-user/grantShow/Audio/audio/"
 audioPlan = [
 # period0
-{'Actor1': {'chocolate':{1:None}},
- 'Actor2': {'welcome':{1:None}},
- 'Actor3': {'welcome':{1:None}},
- 'Actor4': {'welcome':{1:None}},
- 'Actor5': {'welcome':{1:None}},
- 'Actor6': {'welcome':{1:None}},
- 'Audience': {'welcome':{1:None}},
+{'Actor1': {'lineup':{1:None}},
+ 'Actor2': {'lineup':{1:None}},
+ 'Actor3': {'lineup':{1:None}},
+ 'Actor4': {'lineup':{1:None}},
+ 'Actor5': {'lineup':{1:None}},
+ 'Actor6': {'lineup':{1:None}},
+ 'Audience': {'lineup':{1:None}},
 },
 
 # period1
-{'Actor1': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
- 'Actor2': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
- 'Actor3': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
- 'Actor4': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
- 'Actor5': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
- 'Actor6': {'different-file':None},
- 'Audience': {'different-file':None},
+{'Actor1': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Actor2': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Actor3': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Actor4': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Actor5': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Actor6': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
 },
 
 #pediod2
-{'Actor1': {'goodbye':None},
- 'Actor2': {'goodbye':None},
- 'Actor3': {'goodbye':None},
- 'Actor4': {'goodbye':None},
- 'Actor5': {'goodbye':None},
- 'Actor6': {'goodbye':None},
- 'Audience': {'goodbye':None},
+{'Actor1': {'end':None},
+ 'Actor2': {'end':None},
+ 'Actor3': {'end':None},
+ 'Actor4': {'end':None},
+ 'Actor5': {'end':None},
+ 'Actor6': {'end':None},
+ 'Audience': {'end':None},
 }
 
 ]
