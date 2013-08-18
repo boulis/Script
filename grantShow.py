@@ -331,13 +331,13 @@ audioPlan = [
 },
 
 # period1
-{'Actor1': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor2': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor3': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor4': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor5': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor6': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+{'Actor1': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}:None},
+ 'Actor2': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}:None},
+ 'Actor3': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}:None},
+ 'Actor4': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}:None},
+ 'Actor5': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}:None},
+ 'Actor6': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}:None},
+ 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}:None},
 },
 
 #pediod2
