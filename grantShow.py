@@ -318,7 +318,7 @@ this tree {'blah':{1:None, 2:None}} it will play the 'blah' and then just wait f
 If the DTMF tone pressed is not one of the options given, it will 'say please try again'
 
 '''
-directory = "/home/ec2-user/grantShow/Audio/audio/"
+directory = "/audio/"
 audioPlan = [
 # period0
 {'Actor1': {'lineup':None},
@@ -357,4 +357,4 @@ show = Show(names, specialPhones, audioPlan)
 
 # begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
 #show.begin(['61296981940'])
-show.begin(['61404340929'])
+show.begin(['61413817002'])
