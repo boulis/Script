@@ -93,8 +93,6 @@ class Show:
 					actorThreads.append(t)
 				else:
 					print datetime.now(), "WARNING", actorName, "is in the plan but does not have an established call"
-					response = self.manager.originate('SIP/didlogic-trunk/'+ phone, caller_id=actorName, async=True, exten='callwait', context='testcall', priority='1')
-					print datetime.now(), 'Originating call to', actorName, phone, 'Response:', response
 
 			# wait for all threads to finish before proceeding to the next period
 			for t in actorThreads:
@@ -181,6 +179,9 @@ class Show:
 		cdict['CommandID'] = 'MyCommandID'
 		response = self.manager.send_action(cdict)
 		print datetime.now(), "Playing audio file", filename, "to", actorName, ". Start response:", response
+        if response = 'Error'
+            response = self.manager.originate('SIP/didlogic-trunk/'+ phone, caller_id=actorName, async=True, exten='callwait', context='testcall', priority='1')
+		    print datetime.now(), 'Originating call to', actorName, phone, 'Response:', response
 
 		#print response.headers
 		if response.headers['Response'] == 'Success':
