@@ -5,6 +5,7 @@ import sys
 from datetime import datetime
 from time import sleep, time
 import threading
+
 class Show:
 	"""
 	The class that does all the work by starting up the various threads and connection to the AMI
@@ -89,8 +90,8 @@ class Show:
 					# the work and takes two arguments: the plan for this actor and the actorName
 					t = threading.Thread(target=self._execute_plan, args=(period[actorName], actorName))
 					t.start()
-					actorThreads.append(t)
-				else:
+ 					actorThreads.append(t)
+ 				else:
 					print datetime.now(), "WARNING", actorName, "is in the plan but does not have an established call"
 
 			# wait for all threads to finish before proceeding to the next period
@@ -180,22 +181,22 @@ class Show:
 		print datetime.now(), "Playing audio file", filename, "to", actorName, ". Start response:", response
 
 		#print response.headers
-		if response.Headers['Response'] == 'Success':
+		if response.headers['Response'] == 'Success':
 			# Wait for the playback to finish. Create a new event to wait upon. The new event is 
 			# initially clear and we are waiting for the handle_AGIExec() method to set it.
 			self.eventsPlayEnd[actorName] = threading.Event()
 			self.eventsPlayEnd[actorName].wait()
 			print datetime.now(), "Playing audio file", filename, "to", actorName, ". Finished"
-
-	def waitForDTMF(self, actorName, plan, delay=10):
-		start = end = time()
-		while end - start < delay:
-			self.eventsDTMF[actorName] = threading.Event()
-			waitDuration = delay - (end-start)
-			#print datetime.now(), "waiting for DTMF", actorName, plan, waitDuration
-			# block here waiting
-			self.eventsDTMF[actorName].wait(waitDuration)
-			# when done, check whether the event was set, or expired
+ 
+ 	def waitForDTMF(self, actorName, plan, delay=10):
+ 		start = end = time()
+ 		while end - start < delay:
+ 			self.eventsDTMF[actorName] = threading.Event()
+ 			waitDuration = delay - (end-start)
+ 			#print datetime.now(), "waiting for DTMF", actorName, plan, waitDuration
+ 			# block here waiting
+ 			self.eventsDTMF[actorName].wait(waitDuration)
+ 			# when done, check whether the event was set, or expired
 			if self.eventsDTMF[actorName].is_set():
 				# check whether the pressed key is a valid option in our plan
 				if self.pressedDTMF[actorName] in plan:
@@ -213,15 +214,15 @@ class Show:
 			end = time()
 		return 1
 
-	def waitToPress1(self, actorName, delay=30):
-		start = end = time()
-		while end - start < delay:
-			self.eventsDTMF[actorName] = threading.Event()
-			waitDuration = delay - (end-start)
-			#print datetime.now(), "waiting for DTMF", actorName, plan, waitDuration
-			# block here waiting
-			self.eventsDTMF[actorName].wait(waitDuration)
-			# when done, check whether the event was set, or expired
+  	def waitToPress1(self, actorName, delay=30):
+ 		start = end = time()
+ 		while end - start < delay:
+ 			self.eventsDTMF[actorName] = threading.Event()
+ 			waitDuration = delay - (end-start)
+ 			#print datetime.now(), "waiting for DTMF", actorName, plan, waitDuration
+ 			# block here waiting
+ 			self.eventsDTMF[actorName].wait(waitDuration)
+ 			# when done, check whether the event was set, or expired
 			if self.eventsDTMF[actorName].is_set():
 				# check whether the pressed key is a valid option in our plan
 				if self.pressedDTMF[actorName] == 1:
@@ -235,7 +236,7 @@ class Show:
 			# update 
 			end = time()	
 		return 0
-
+ 	
 	def handle_NewCallerID(self, event, manager):
 		actorName = event.headers['CallerIDName']
 		self.channel[actorName] = event.headers['Channel']
@@ -252,7 +253,7 @@ class Show:
 				self.eventsCallAnswer[actorName].set()
 			else:
 				print datetime.now(), "WARNING", actorName, "answered a call, which is not originated, or waiting to be answered"
-
+ 
 	def handle_DTMF(self, event, manager):
 		#print datetime.now(), event.name, event.headers
 		if event.headers['Begin'] == 'Yes' and event.headers['Direction'] == 'Received':
@@ -279,19 +280,19 @@ class Show:
 				self.eventsPlayEnd[actorName].set()
 			else:
 				print datetime.now(), "WARNING: playback ended for", actorName, "WITHOUT a thread waiting for it" 
-
+ 
 	def handle_shutdown(self, event, manager):
 		print "Received shutdown event"
 		manager.close()
-
-
-	def handle_event(event, manager):
+ 
+ 
+ 	def handle_event(event, manager):
 		if (event.name == 'RTCPReceived') or (event.name == 'RTCPSent'):
 			return
 		print datetime.now(), "Received event: %s" % event.name
 		print event.headers
-
-
+    	
+    	
 # names of the main characters, to make description of the plan and reporting easier
 names = ['Actor1','Actor2','Actor3','Actor4','Actor5','Actor6','Audience']
 # the phones that we can call from to begin the main show. Add as many as you like
@@ -322,31 +323,31 @@ audioPlan = [
 # period0
 {'Actor1': {'lineup':None},
  'Actor2': {'lineup':None},
-# 'Actor3': {'lineup':None},
-# 'Actor4': {'lineup':None},
-# 'Actor5': {'lineup':None},
-# 'Actor6': {'lineup':None},
-# 'Audience': {'lineup':None},
+ 'Actor3': {'lineup':None},
+ 'Actor4': {'lineup':None},
+ 'Actor5': {'lineup':None},
+ 'Actor6': {'lineup':None},
+ 'Audience': {'lineup':None},
 },
 
 # period1
 {'Actor1': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
  'Actor2': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Actor3': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Actor4': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Actor5': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Actor6': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Actor3': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Actor4': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Actor5': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Actor6': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
 },
 
 #pediod2
 {'Actor1': {'end':None},
  'Actor2': {'end':None},
-# 'Actor3': {'end':None},
-# 'Actor4': {'end':None},
-# 'Actor5': {'end':None},
-# 'Actor6': {'end':None},
-# 'Audience': {'end':None},
+ 'Actor3': {'end':None},
+ 'Actor4': {'end':None},
+ 'Actor5': {'end':None},
+ 'Actor6': {'end':None},
+ 'Audience': {'end':None},
 }
 
 ]
@@ -356,4 +357,4 @@ show = Show(names, specialPhones, audioPlan)
 
 # begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
 #show.begin(['61296981940'])
-show.begin(['61413817002','61404504804'])
+show.begin(['61413817002'])
