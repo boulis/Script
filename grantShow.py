@@ -5,7 +5,6 @@ import sys
 from datetime import datetime
 from time import sleep, time
 import threading
-
 class Show:
 	"""
 	The class that does all the work by starting up the various threads and connection to the AMI
@@ -179,12 +178,12 @@ class Show:
 		cdict['CommandID'] = 'MyCommandID'
 		response = self.manager.send_action(cdict)
 		print datetime.now(), "Playing audio file", filename, "to", actorName, ". Start response:", response
-        if response == 'Error':
-            response = self.manager.originate('SIP/didlogic-trunk/'+ phone, caller_id=actorName, async=True, exten='callwait', context='testcall', priority='1')
-		    print datetime.now(), 'Originating call to', actorName, phone, 'Response:', response
+		#if response.Headers['Response'] == 'Error':
+		#	response = self.manager.originate('SIP/didlogic-trunk/'+ phone, caller_id=actorName, async=True, exten='callwait', context='testcall', priority='1')
+		#	print datetime.now(), 'Originating call to', actorName, phone, 'Response:', response
 
 		#print response.headers
-		if response.headers['Response'] == 'Success':
+		if response.Headers['Response'] == 'Success':
 			# Wait for the playback to finish. Create a new event to wait upon. The new event is 
 			# initially clear and we are waiting for the handle_AGIExec() method to set it.
 			self.eventsPlayEnd[actorName] = threading.Event()
