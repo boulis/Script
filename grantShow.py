@@ -324,32 +324,32 @@ directory = "/home/ec2-user/grantShow/Audio/audio/"
 audioPlan = [
 # period0
 {'Actor1': {'lineup':None},
- 'Actor2': {'lineup':None},
- 'Actor3': {'lineup':None},
- 'Actor4': {'lineup':None},
- 'Actor5': {'lineup':None},
- 'Actor6': {'lineup':None},
- 'Audience': {'lineup':None},
+# 'Actor2': {'lineup':None},
+# 'Actor3': {'lineup':None},
+# 'Actor4': {'lineup':None},
+# 'Actor5': {'lineup':None},
+# 'Actor6': {'lineup':None},
+# 'Audience': {'lineup':None},
 },
 
 # period1
 {'Actor1': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor2': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor3': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor4': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor5': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor6': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+# 'Actor2': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+# 'Actor3': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+# 'Actor4': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+# 'Actor5': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+# 'Actor6': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+# 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
 },
 
 #pediod2
 {'Actor1': {'end':None},
- 'Actor2': {'end':None},
- 'Actor3': {'end':None},
- 'Actor4': {'end':None},
- 'Actor5': {'end':None},
- 'Actor6': {'end':None},
- 'Audience': {'end':None},
+# 'Actor2': {'end':None},
+# 'Actor3': {'end':None},
+# 'Actor4': {'end':None},
+# 'Actor5': {'end':None},
+# 'Actor6': {'end':None},
+# 'Audience': {'end':None},
 }
 
 ]
