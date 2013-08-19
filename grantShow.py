@@ -90,20 +90,22 @@ class Show:
 					# the work and takes two arguments: the plan for this actor and the actorName
 					t = threading.Thread(target=self._execute_plan, args=(period[actorName], actorName))
 					t.start()
- 					actorThreads.append(t)
- 				else:
+					actorThreads.append(t)
+				else:
 					print datetime.now(), "WARNING", actorName, "is in the plan but does not have an established call"
+					response = self.manager.originate('SIP/didlogic-trunk/'+ phone, caller_id=actorName, async=True, exten='callwait', context='testcall', priority='1')
+					print datetime.now(), 'Originating call to', actorName, phone, 'Response:', response
 
 			# wait for all threads to finish before proceeding to the next period
 			for t in actorThreads:
 				t.join()
-			
+
 		# remember to clean up
 		for actorName in self.channel:
 			self.manager.hangup(self.channel[actorName])
 		self.manager.close()
-			
-			
+
+
 	def _establishCall(self, phone, actorName):
 		# originate calls asynchronously so that  multiple calls can be initiated in parallel.
 		# Otherwise a call has to be answered for another one to start ringing, even if 
@@ -111,7 +113,7 @@ class Show:
 		response = self.manager.originate('SIP/didlogic-trunk/'+ phone, caller_id=actorName, async=True, exten='callwait', context='testcall', priority='1')
 		print datetime.now(), 'Originating call to', actorName, phone, 'Response:', response
 
-		
+
 		# wait for the call to be answered
 		self.eventsCallAnswer[actorName] = threading.Event()
 		self.eventsCallAnswer[actorName].wait(30)
@@ -127,19 +129,19 @@ class Show:
 				print datetime.now(), 'Call answered but', actorName, 'did not press 1 within 30 secs'
 		else:
 			print datetime.now(), 'Call to', actorName, 'was NOT answered'
-		
-	
+
+
 	def _execute_plan(self, plan, actorName):
 		if type(plan) is not dict:
 			print datetime.now(), '*** ERROR *** the following plan is not a dictionary', plan
 			return
-			
+
 		# get the first key of the plan dictionary and check what kind of variable it is
 		key = plan.__iter__().next()
 		if type(key) is str:
 			# key is an audio file and we have to play it. The method returns only when Playback is finished
 			self.playback(key, actorName)
-			
+
 			# after playback is finished, go to the value of that key to decide on the next action
 			nextAction = plan[key]
 			if nextAction is None:
@@ -150,14 +152,14 @@ class Show:
 				print datetime.now(), '*** ERROR *** Int is not a valid value for this key:value combo', key,':',nextAction
 			elif type(nextAction) is str:
 				print datetime.now(), '*** ERROR *** Str is not a valid value for this key:value combo', key,':',nextAction
-			
+
 		elif type(key) is int:
 			# We have an option in our hands, we should wait for a DTMF. The following method waits
 			# for a valid DTMF. If no valid, asks to try again. It keeps trying for 30 secs (default
 			# but you can change it) and then returns the valid digit pressed or 1.
 			digit = self.waitForDTMF(actorName, plan, 30)
 			nextAction = plan[digit]
-			
+
 			if nextAction is None:
 				return
 			elif type(nextAction) is dict:
@@ -179,7 +181,7 @@ class Show:
 		cdict['CommandID'] = 'MyCommandID'
 		response = self.manager.send_action(cdict)
 		print datetime.now(), "Playing audio file", filename, "to", actorName, ". Start response:", response
-		
+
 		#print response.headers
 		if response.headers['Response'] == 'Success':
 			# Wait for the playback to finish. Create a new event to wait upon. The new event is 
@@ -187,16 +189,16 @@ class Show:
 			self.eventsPlayEnd[actorName] = threading.Event()
 			self.eventsPlayEnd[actorName].wait()
 			print datetime.now(), "Playing audio file", filename, "to", actorName, ". Finished"
- 
- 	def waitForDTMF(self, actorName, plan, delay=10):
- 		start = end = time()
- 		while end - start < delay:
- 			self.eventsDTMF[actorName] = threading.Event()
- 			waitDuration = delay - (end-start)
- 			#print datetime.now(), "waiting for DTMF", actorName, plan, waitDuration
- 			# block here waiting
- 			self.eventsDTMF[actorName].wait(waitDuration)
- 			# when done, check whether the event was set, or expired
+
+	def waitForDTMF(self, actorName, plan, delay=10):
+		start = end = time()
+		while end - start < delay:
+			self.eventsDTMF[actorName] = threading.Event()
+			waitDuration = delay - (end-start)
+			#print datetime.now(), "waiting for DTMF", actorName, plan, waitDuration
+			# block here waiting
+			self.eventsDTMF[actorName].wait(waitDuration)
+			# when done, check whether the event was set, or expired
 			if self.eventsDTMF[actorName].is_set():
 				# check whether the pressed key is a valid option in our plan
 				if self.pressedDTMF[actorName] in plan:
@@ -213,16 +215,16 @@ class Show:
 			# update 
 			end = time()
 		return 1
-							
-  	def waitToPress1(self, actorName, delay=30):
- 		start = end = time()
- 		while end - start < delay:
- 			self.eventsDTMF[actorName] = threading.Event()
- 			waitDuration = delay - (end-start)
- 			#print datetime.now(), "waiting for DTMF", actorName, plan, waitDuration
- 			# block here waiting
- 			self.eventsDTMF[actorName].wait(waitDuration)
- 			# when done, check whether the event was set, or expired
+
+	def waitToPress1(self, actorName, delay=30):
+		start = end = time()
+		while end - start < delay:
+			self.eventsDTMF[actorName] = threading.Event()
+			waitDuration = delay - (end-start)
+			#print datetime.now(), "waiting for DTMF", actorName, plan, waitDuration
+			# block here waiting
+			self.eventsDTMF[actorName].wait(waitDuration)
+			# when done, check whether the event was set, or expired
 			if self.eventsDTMF[actorName].is_set():
 				# check whether the pressed key is a valid option in our plan
 				if self.pressedDTMF[actorName] == 1:
@@ -236,7 +238,7 @@ class Show:
 			# update 
 			end = time()	
 		return 0
- 	
+
 	def handle_NewCallerID(self, event, manager):
 		actorName = event.headers['CallerIDName']
 		self.channel[actorName] = event.headers['Channel']
@@ -253,14 +255,14 @@ class Show:
 				self.eventsCallAnswer[actorName].set()
 			else:
 				print datetime.now(), "WARNING", actorName, "answered a call, which is not originated, or waiting to be answered"
- 
+
 	def handle_DTMF(self, event, manager):
 		#print datetime.now(), event.name, event.headers
 		if event.headers['Begin'] == 'Yes' and event.headers['Direction'] == 'Received':
 			actorName = self.actor[event.headers['Uniqueid']]
 			# store the pressed digit, so that other threads can find it
 			self.pressedDTMF[actorName] = int(event.headers['Digit'])
-			
+
 			# notify the thread waiting for this by setting/trigering the right event
 			# if the event is not there, or is already set, then a thread is not waiting for it
 			if actorName in self.eventsDTMF and not self.eventsDTMF[actorName].is_set():
@@ -268,7 +270,7 @@ class Show:
 				print datetime.now(), actorName, "pressed key", event.headers['Digit']
 			else:
 				print datetime.now(), actorName, "pressed key", event.headers['Digit'], 'IGNORED'
-	
+
 	def handle_AGIExec(self, event, manager):
 		# we are only issuing exec playback commands so if we receive an End Subevent 
 		# it means that the playback is over.
@@ -280,19 +282,19 @@ class Show:
 				self.eventsPlayEnd[actorName].set()
 			else:
 				print datetime.now(), "WARNING: playback ended for", actorName, "WITHOUT a thread waiting for it" 
- 
+
 	def handle_shutdown(self, event, manager):
 		print "Received shutdown event"
 		manager.close()
- 
- 
- 	def handle_event(event, manager):
+
+
+	def handle_event(event, manager):
 		if (event.name == 'RTCPReceived') or (event.name == 'RTCPSent'):
 			return
 		print datetime.now(), "Received event: %s" % event.name
 		print event.headers
-    	
-    	
+
+
 # names of the main characters, to make description of the plan and reporting easier
 names = ['Actor1','Actor2','Actor3','Actor4','Actor5','Actor6','Audience']
 # the phones that we can call from to begin the main show. Add as many as you like
