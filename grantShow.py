@@ -183,7 +183,7 @@ class Show:
 			print datetime.now(), 'Originating call to', actorName, phone, 'Response:', response
 
 		#print response.headers
-		if response.headers['Response'] == 'Success':
+		if response.Headers['Response'] == 'Success':
 			# Wait for the playback to finish. Create a new event to wait upon. The new event is 
 			# initially clear and we are waiting for the handle_AGIExec() method to set it.
 			self.eventsPlayEnd[actorName] = threading.Event()
