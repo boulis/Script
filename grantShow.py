@@ -1,11 +1,12 @@
 #! /usr/bin/python
 #changetest
 import asterisk.manager
+import pydevd
 import sys
 from datetime import datetime
 from time import sleep, time
 import threading
-
+pydevd.settrace('root@54.227.241.235', port=5134, stdoutToServer=True, stderrToServer=True)
 class Show:
 	"""
 	The class that does all the work by starting up the various threads and connection to the AMI
@@ -179,7 +180,7 @@ class Show:
 		cdict['CommandID'] = 'MyCommandID'
 		response = self.manager.send_action(cdict)
 		print datetime.now(), "Playing audio file", filename, "to", actorName, ". Start response:", response
-		if response == 'Error':
+		if response == ' Error':
 			response = self.manager.originate('SIP/didlogic-trunk/'+ phone, caller_id=actorName, async=True, exten='callwait', context='testcall', priority='1')
 			print datetime.now(), 'Originating call to', actorName, phone, 'Response:', response
 
