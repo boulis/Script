@@ -132,7 +132,7 @@ class Show:
 			sleep(1) # needs a small delay before the channel becomes valid for playback
 			# if the call is answered, ask for the actor to press 1 (to confirm real interaction)
 			self.playback('press1', actorName)
-			if self.waitToPress1(actorName, delay):
+			if self.waitToPress1(actorName, delay=delay):
 				print datetime.now(), 'Success establishing call to', actorName
 			else:
 				self.manager.hangup(self.channel[actorName])
