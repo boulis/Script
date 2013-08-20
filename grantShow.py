@@ -69,10 +69,10 @@ class Show:
 
 
 	def begin(self, phones=[]):
-	'''
-	The main function to start the show. It first tries to originate the calls and then begins to
-	execute the plan period by period.
-	'''
+		'''
+		The main function to start the show. It first tries to originate the calls and then begins to
+		execute the plan period by period.
+		'''
 		# First try to originate enough calls, and establish the connection is with a person
 		actorThreads = []
 		for phone, actorName in zip(phones, self.names):
@@ -99,8 +99,8 @@ class Show:
 					# the work and takes two arguments: the plan for this actor and the actorName
 					t = threading.Thread(target=self._execute_plan, args=(period[actorName], actorName))
 					t.start()
- 					actorThreads.append(t)
- 				else:
+					actorThreads.append(t)
+				else:
 					print datetime.now(), "WARNING", actorName, "is in the plan but does not have an established call"
 
 			# wait for all threads to finish before proceeding to the next period
@@ -114,10 +114,10 @@ class Show:
 
 
 	def _establishCall(self, phone, actorName, delay=30):
-	'''
-	Multiple threads of this function are started in begin(). Originates a call and then waits for
-	1 to be pressed. If not pressed within <delay> secs, it hangs up the call.
-	'''
+		'''
+		Multiple threads of this function are started in begin(). Originates a call and then waits for
+		1 to be pressed. If not pressed within <delay> secs, it hangs up the call.
+		'''
 		# originate calls asynchronously so that  multiple calls can be initiated in parallel.
 		# Otherwise a call has to be answered for another one to start ringing, even if
 		# the originate commands are given from different threads
@@ -142,13 +142,13 @@ class Show:
 
 
 	def _execute_plan(self, plan, actorName):
-	'''
-	Multiple threads of this function are started in begin(): for each period we start the threads
-	corresponding to the actors named in this period. The function parses the dict representing
-	the plan. When parts of the plan are subplans (nested dictionaries) this function is
-	called recursively. All the _execute_plan() threads started at begin, are joined (i.e. wait
-	for all to finish) at the end of each period, and the cycle begins again for the next period.
-	'''
+		'''
+		Multiple threads of this function are started in begin(): for each period we start the threads
+		corresponding to the actors named in this period. The function parses the dict representing
+		the plan. When parts of the plan are subplans (nested dictionaries) this function is
+		called recursively. All the _execute_plan() threads started at begin, are joined (i.e. wait
+		for all to finish) at the end of each period, and the cycle begins again for the next period.
+		'''
 		if type(plan) is not dict:
 			print datetime.now(), '*** ERROR *** the following plan is not a dictionary', plan
 			return
@@ -192,10 +192,10 @@ class Show:
 
 
 	def playback(self, filename, actorName):
-	'''
-	Plays back an audio file to the channel assiciated with <actorName>.
-	Sends the proper AGI command, and then *waits* till it is notified that the playback has ended
-	'''
+		'''
+		Plays back an audio file to the channel assiciated with <actorName>.
+		Sends the proper AGI command, and then *waits* till it is notified that the playback has ended
+		'''
 		cdict = {'Action':'AGI'}
 		cdict['Channel'] = self.channel[actorName]
 		cdict['Command'] = 'EXEC Playback ' + filename
@@ -211,20 +211,20 @@ class Show:
 			self.eventsPlayEnd[actorName].wait()
 			print datetime.now(), "Playing audio file", filename, "to", actorName, ". Finished"
 
- 	def waitForDTMF(self, actorName, plan, delay=10, defaultReturn=1):
- 	'''
- 	Waits for a valid key pressed (DTMF tone) up to <delay> secs.
- 	Valid options are taken from the keys of the given <plan>. If not valid option is given
- 	withing <delay> secs, the default options <defaultReturn> is returned
- 	'''
- 		start = end = time()
- 		while end - start < delay:
- 			self.eventsDTMF[actorName] = threading.Event()
- 			waitDuration = delay - (end-start)
- 			#print datetime.now(), "waiting for DTMF", actorName, plan, waitDuration
+	def waitForDTMF(self, actorName, plan, delay=10, defaultReturn=1):
+		'''
+ 		Waits for a valid key pressed (DTMF tone) up to <delay> secs.
+ 		Valid options are taken from the keys of the given <plan>. If not valid option is given
+ 		within <delay> secs, the default options <defaultReturn> is returned
+ 		'''
+		start = end = time()
+		while end - start < delay:
+			self.eventsDTMF[actorName] = threading.Event()
+			waitDuration = delay - (end-start)
+			#print datetime.now(), "waiting for DTMF", actorName, plan, waitDuration
  			# block here waiting
  			self.eventsDTMF[actorName].wait(waitDuration)
- 			# when done, check whether the event was set, or expired
+			# when done, check whether the event was set, or expired
 			if self.eventsDTMF[actorName].is_set():
 				# check whether the pressed key is a valid option in our plan
 				if self.pressedDTMF[actorName] in plan:
@@ -239,10 +239,10 @@ class Show:
 			end = time()
 		return defaultReturn
 
-  	def waitToPress1(self, actorName, delay=30):
+	def waitToPress1(self, actorName, delay=30):
 		self.waitForDTMF(actorName, {1:None}, delay, defaultReturn=0)
 
- 	# The rest are functions that we register with the pyst manager to handle AMI events
+	# The rest are functions that we register with the pyst manager to handle AMI events
 
 	def handle_NewCallerID(self, event, manager):
 		actorName = event.headers['CallerIDName']
@@ -293,7 +293,7 @@ class Show:
 		manager.close()
 
 
- 	def handle_event(self.event, manager):
+	def handle_event(self.event, manager):
 		if (event.name == 'RTCPReceived') or (event.name == 'RTCPSent'):
 			return
 		print datetime.now(), "Received event: %s" % event.name
