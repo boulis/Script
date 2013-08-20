@@ -14,11 +14,11 @@ class Show:
     the AMI. The by calling begin() you start the show.
     '''
     def __init__(self, names, specialPhones=[], audioPlan):
-    '''
-    The constructor for this class needs the names of the actors in a list of strings, the special
-    phone numbers (that give the signal to start the show) again as a list of strings, and the
-    audio plan which should be list of dictionaries.
-    '''
+        '''
+        The constructor for this class needs the names of the actors in a list of strings, the special
+        phone numbers (that give the signal to start the show) again as a list of strings, and the
+        audio plan which should be list of dictionaries.
+        '''
 		self.names = names
 		self.specialPhones = specialPhones
 		self.audioPlan = audioPlan
