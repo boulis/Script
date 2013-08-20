@@ -198,7 +198,7 @@ class Show:
 		'''
 		cdict = {'Action':'AGI'}
 		cdict['Channel'] = self.channel[actorName]
-		cdict['Command'] = 'EXEC Playback ' + filename
+		cdict['Command'] = 'EXEC Playback ' + directory + filename
 		cdict['CommandID'] = 'MyCommandID'
 		response = self.manager.send_action(cdict)
 		print datetime.now(), "Playing audio file", filename, "to", actorName, ". Start response:", response
