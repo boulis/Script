@@ -8,11 +8,11 @@ import threading
 
 
 class Show:
-'''
-The class that does all the work by starting up the various threads and connection to the AMI.
-When creating a new object from this class, it initialises several variables and connects to 
-the AMI. The by calling begin() you start the show.
-'''
+    '''
+	The class that does all the work by starting up the various threads and connection to the AMI.
+	When creating a new object from this class, it initialises several variables and connects to
+	the AMI. The by calling begin() you start the show.
+	'''
 	def __init__(self, names, specialPhones=[], audioPlan):
 	'''
 	The constructor for this class needs the names of the actors in a list of strings, the special
