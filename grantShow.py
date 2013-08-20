@@ -240,7 +240,7 @@ class Show:
 		return defaultReturn
 
 	def waitToPress1(self, actorName, delay=30):
-		self.waitForDTMF(actorName, {1:None}, delay, defaultReturn=0)
+		self.waitForDTMF(actorName, {1:None}, delay, defaultReturn=1)
 
 	# The rest are functions that we register with the pyst manager to handle AMI events
 
