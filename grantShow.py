@@ -19,8 +19,8 @@ class Show:
 	phone numbers (that give the signal to start the show) again as a list of strings, and the
 	audio plan which should be list of dictionaries.
 	'''
-		self.names = names
-		self.specialPhones = specialPhones
+        self.names = names
+        self.specialPhones = specialPhones
 		self.audioPlan = audioPlan
 
 		# Dictionaries to hold important info on calls.
