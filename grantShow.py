@@ -8,24 +8,24 @@ import threading
 
 
 class Show:
-    '''
-	The class that does all the work by starting up the various threads and connection to the AMI.
-	When creating a new object from this class, it initialises several variables and connects to
-	the AMI. The by calling begin() you start the show.
+'''
+The class that does all the work by starting up the various threads and connection to the AMI.
+When creating a new object from this class, it initialises several variables and connects to
+the AMI. The by calling begin() you start the show.
+'''
+	def __init__(self, names, specialPhones=[], audioPlan):
 	'''
-    def __init__(self, names, specialPhones=[], audioPlan):
-        '''
-	    The constructor for this class needs the names of the actors in a list of strings, the special
-	    phone numbers (that give the signal to start the show) again as a list of strings, and the
-	    audio plan which should be list of dictionaries.
-	        '''
-        self.names = names
-        self.specialPhones = specialPhones
-        self.audioPlan = audioPlan
+	The constructor for this class needs the names of the actors in a list of strings, the special
+	phone numbers (that give the signal to start the show) again as a list of strings, and the
+	audio plan which should be list of dictionaries.
+	'''
+		self.names = names
+		self.specialPhones = specialPhones
+		self.audioPlan = audioPlan
 
-        # Dictionaries to hold important info on calls.
+		# Dictionaries to hold important info on calls.
 		self.channel = {}	# Referenced with actor name as key
-		# self.uniqueID = {}	# Referenced with actor name as key
+		self.uniqueID = {}	# Referenced with actor name as key
 		self.actor = {}		# Referenced with uniqueID as key
 		self.actorFromChan = {} # Referenced with channel as key
 
