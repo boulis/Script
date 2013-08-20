@@ -293,7 +293,7 @@ class Show:
 		manager.close()
 
 
-	def handle_event(self.event, manager):
+	def handle_event(self, event, manager):
 		if (event.name == 'RTCPReceived') or (event.name == 'RTCPSent'):
 			return
 		print datetime.now(), "Received event: %s" % event.name
