@@ -135,6 +135,7 @@ class Show:
 			if self.waitToPress1(actorName, delay=delay):
 				print datetime.now(), 'Success establishing call to', actorName
 			else:
+				self.playback('nothuman', actorName)
 				self.manager.hangup(self.channel[actorName])
 				print datetime.now(), 'Call answered but', actorName, 'did not press 1 within', delay, 'secs'
 		else:
@@ -331,35 +332,37 @@ the function waitForDTMF
 '''
 directory = "/audio/"
 audioPlan = [
-# period0
-{'Actor1': {'lineup':None},
- 'Actor2': {'lineup':None},
- 'Actor3': {'lineup':None},
- 'Actor4': {'lineup':None},
- 'Actor5': {'lineup':None},
- 'Actor6': {'lineup':None},
- 'Audience': {'lineup':None},
+# Hi to humans
+{'Actor1': {'ishuman':None},
+# 'Actor2': {'lineup':None},
+# 'Actor3': {'lineup':None},
+# 'Actor4': {'lineup':None},
+# 'Actor5': {'lineup':None},
+# 'Actor6': {'lineup':None},
+# 'Audience': {'lineup':None},
+},
+#Seated movements
+{'Actor1': {'julietstart':None},
+
+},
+#Get headphones then start part 1
+{'Actor1': {'julietgetheadphones':{1:'julietpart1', 2:'julieterrorpart1'}},
+},
+#Get headphones then start part 1
+{'Actor1': {'julietpart2':None},
+
 },
 
 # period1
-{'Actor1': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor2': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor3': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor4': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor5': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Actor6': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-},
-
-#pediod2
-{'Actor1': {'end':None},
- 'Actor2': {'end':None},
- 'Actor3': {'end':None},
- 'Actor4': {'end':None},
- 'Actor5': {'end':None},
- 'Actor6': {'end':None},
- 'Audience': {'end':None},
+{'Actor1': {'julietpart3qs':{1:'julietpressed1', 2:'julietpressed2', 3:'julietpressed3'}},
+# 'Actor2': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+# 'Actor3': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+# 'Actor4': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+# 'Actor5': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+# 'Actor6': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+# 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
 }
+
 
 ]
 
