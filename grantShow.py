@@ -212,6 +212,20 @@ class Show:
 			self.eventsPlayEnd[actorName].wait()
 			print datetime.now(), "Playing audio file", filename, "to", actorName, ". Finished"
 
+    def playshort(self, filename, actorName):
+		'''
+		Plays back an audio file to the channel assiciated with <actorName>.
+		Sends the proper AGI command, and then *waits* till it is notified that the playback has ended
+		'''
+		cdict = {'Action':'AGI'}
+		cdict['Channel'] = self.channel[actorName]
+		cdict['Command'] = 'EXEC Playback ' + directory + filename
+		cdict['CommandID'] = 'MyCommandID'
+		response = self.manager.send_action(cdict)
+		print datetime.now(), "Playing audio file", filename, "to", actorName, ". Start response:", response
+
+
+
 	def waitForDTMF(self, actorName, plan, delay=10, defaultReturn=1):
 		'''
  		Waits for a valid key pressed (DTMF tone) up to <delay> secs.
@@ -269,7 +283,7 @@ class Show:
 			actorName = self.actor[event.headers['Uniqueid']]
 			# store the pressed digit, so that other threads can find it
 			self.pressedDTMF[actorName] = int(event.headers['Digit'])
-			self.playback('press1', actorName)
+			self.playshort('julietpressed1', actorName)
 			# notify the thread waiting for this by setting/trigering the right event
 			# if the event is not there, or is already set, then a thread is not waiting for it
 			if actorName in self.eventsDTMF and not self.eventsDTMF[actorName].is_set():
