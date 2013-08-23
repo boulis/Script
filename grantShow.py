@@ -238,7 +238,7 @@ class Show:
 			waitDuration = delay - (end-start)
 			#print datetime.now(), "waiting for DTMF", actorName, plan, waitDuration
  			# block here waiting
- 			self.playback('press1', actorName)
+
  			self.eventsDTMF[actorName].wait(waitDuration)
 			# when done, check whether the event was set, or expired
 			if self.eventsDTMF[actorName].is_set():
@@ -283,7 +283,6 @@ class Show:
 			actorName = self.actor[event.headers['Uniqueid']]
 			# store the pressed digit, so that other threads can find it
 			self.pressedDTMF[actorName] = int(event.headers['Digit'])
-			self.playshort('julietpressed1', actorName)
 			# notify the thread waiting for this by setting/trigering the right event
 			# if the event is not there, or is already set, then a thread is not waiting for it
 			if actorName in self.eventsDTMF and not self.eventsDTMF[actorName].is_set():
