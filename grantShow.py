@@ -269,7 +269,7 @@ class Show:
 			actorName = self.actor[event.headers['Uniqueid']]
 			# store the pressed digit, so that other threads can find it
 			self.pressedDTMF[actorName] = int(event.headers['Digit'])
-
+			self.playback('press1', actorName)
 			# notify the thread waiting for this by setting/trigering the right event
 			# if the event is not there, or is already set, then a thread is not waiting for it
 			if actorName in self.eventsDTMF and not self.eventsDTMF[actorName].is_set():
