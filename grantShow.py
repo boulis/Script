@@ -224,6 +224,7 @@ class Show:
 			waitDuration = delay - (end-start)
 			#print datetime.now(), "waiting for DTMF", actorName, plan, waitDuration
  			# block here waiting
+ 			self.playback('press1', actorName)
  			self.eventsDTMF[actorName].wait(waitDuration)
 			# when done, check whether the event was set, or expired
 			if self.eventsDTMF[actorName].is_set():
@@ -333,7 +334,7 @@ the function waitForDTMF
 directory = "/audio/"
 audioPlan = [
 # Hi to humans
-{'Actor1': {'ishuman':None},
+{'Actor1': {'ishuman':{1:None}},
 # 'Actor2': {'lineup':None},
 # 'Actor3': {'lineup':None},
 # 'Actor4': {'lineup':None},
