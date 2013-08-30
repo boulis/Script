@@ -45,7 +45,7 @@ audioPlan = [
 # 'Actor4': {'lineup':None},
 # 'Actor5': {'lineup':None},
 # 'Actor6': {'lineup':None},
-# 'Audience': {'lineup':None},
+ 'Audience': {'lineup':None},
 },
 #Seated movements
 {'Actor1': {'julietstart':None},
@@ -66,7 +66,7 @@ audioPlan = [
 # 'Actor4': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
 # 'Actor5': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
 # 'Actor6': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+ 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
 }
 
 
@@ -74,7 +74,7 @@ audioPlan = [
 
 
 # create a new show
-show = Show(names, triggerPhones, audioPlan, audiencePhone=None, username='admin', pswd='L1v3pupp3t5')
+show = showisk.Show(names, triggerPhones, audioPlan, audiencePhone='302721088776', username='admin', pswd='L1v3pupp3t5')
 
 # set some configuration parameters. For example the audio directory or the full path for commonly
 # played sounds like the beep or 'press 1'. No need to set everything, there are default values.
@@ -82,4 +82,4 @@ show.audiodir = '/audio/'
 
 # begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
 #show.begin(['61296981940'])
-show.begin(['61409446016'])
+show.begin(['306946935055'])

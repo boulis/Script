@@ -106,8 +106,8 @@ class Show:
 		
 		# if an audience phone defined then establish a call for the special actor 'Audience'
 		# no need to press 1 to establish the call, so the third argument is False
-		if audiencePhone:
-			t = threading.Thread(target=self._establishCall, args=(audiencePhone, 'Audience', False))
+		if self.audiencePhone:
+			t = threading.Thread(target=self._establishCall, args=(self.audiencePhone, 'Audience', False))
 			t.start()
 			actorThreads.append(t)
 			
@@ -163,14 +163,14 @@ class Show:
 			# if we do not need to press 1 print a success message and return.
 			if not press1needed:
 				print datetime.now(), 'Success establishing call to', actorName
-				phone[actorName] = phone  # associate phone number with actor
+				self.phoneNum[actorName] = phone  # associate phone number with actor
 				return True
 			sleep(1) # needs a small delay before the channel becomes valid for playback
 			# if the call is answered, ask for the actor to press 1 (to confirm real interaction)
 			self.playback(self.press1, actorName, dir='')
 			if self.waitToPress1(actorName, delay=delay):
 				print datetime.now(), 'Success establishing call to', actorName
-				phone[actorName] = phone  # associate phone number with actor
+				self.phoneNum[actorName] = phone  # associate phone number with actor
 			else:
 				if self.nothuman: 
 					self.playback(self.nothuman, actorName, dir='')
@@ -231,12 +231,13 @@ class Show:
 			print datetime.now(), '*** ERROR *** No such key is allowed:', key
 
 
-	def playback(self, filename, actorName, dir= self.audiodir, waitToEnd=True):
+	def playback(self, filename, actorName, dir=None, waitToEnd=True):
 		'''
 		Plays back an audio file to the channel associated with <actorName>.
 		Sends the proper AGI command, and then *waits* till it is notified that the playback has ended
 		You can also call it so it does not wait, or with a different audio dir
 		'''
+		if dir is None: dir = self.audiodir
 		cdict = {'Action':'AGI'}
 		cdict['Channel'] = self.channel[actorName]
 		cdict['Command'] = 'EXEC Playback ' + dir + filename
@@ -339,7 +340,8 @@ class Show:
 	def handle_Hangup(self, event, manager):
 		actorName = event.headers['CallerIDName']
 		# Try to reconect only if we are not shutting down and this is an established call
-		if (not self.shuttingDown) and (actorName in uniqueID) and (uniqueID[actorName] == event.headers['Uniqueid']):
+		if (not self.shuttingDown) and (actorName in self.uniqueID) and (self.uniqueID[actorName] == event.headers['Uniqueid']):
+			print datetime.now(), actorName, '*Hangup*  Will try to recall.'
 			# first set any events that the existing thread might be waiting on
 			if actorName in self.eventsDTMF:
 				self.eventsDTMF[actorName].set()
@@ -348,7 +350,7 @@ class Show:
 			# we could wait for the thread to join (i.e., exit) but there is no need. 
 			sleep(0.5)
 			# establish a new call
-			if self._establishCall(phoneNum[actorName], actorName, press1needed=False) and self.whenReconnected:
+			if self._establishCall(self.phoneNum[actorName], actorName, press1needed=False) and self.whenReconnected:
 				sleep(0.5)
 				self.playback(self.whenReconnected, actorName, dir='')
 
@@ -417,6 +419,6 @@ if __name__ == "__main__":
 
 	# create a new show
 	show = Show(names, triggerPhones, audioPlan, audiencePhone=None, username='admin', pswd='L1v3pupp3t5')
-
+	show.whenReconnected = 'hello'
 	# begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
 	show.begin(['306946935055'])
