@@ -48,26 +48,13 @@ audioPlan = [
  'Audience': {'lineup':None},
 },
 #Seated movements
-{'Actor1': {'julietstart':None},
+{'Actor1': {'JScene1':{1:None}},
 
 },
 #Get headphones then start part 1
-{'Actor1': {'julietgetheadphones':{1:'julietpart1', 2:'julieterrorpart1'}},
-},
-#Get headphones then start part 1
-{'Actor1': {'julietpart2':None},
-
-},
-
-# period1
-{'Actor1': {'julietpart3qs':{1:'julietpressed1', 2:'julietpressed2', 3:'julietpressed3'}},
-# 'Actor2': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Actor3': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Actor4': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Actor5': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Actor6': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+{'Actor1': {'JScene2':None},
 }
+
 
 
 ]
@@ -82,4 +69,4 @@ show.audiodir = '/audio/'
 
 # begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
 #show.begin(['61296981940'])
-show.begin(['306946935055'])
+show.begin(['61413817002'])
