@@ -39,7 +39,7 @@ the function waitForDTMF
 
 audioPlan = [
 # Hi to humans
-{'Actor1': {'JScene2':None},
+{'Actor1': {'ishuman':None},
 # 'Actor2': {'lineup':None},
 # 'Actor3': {'lineup':None},
 # 'Actor4': {'lineup':None},
@@ -54,8 +54,6 @@ audioPlan = [
 #Get headphones then start part 1
 {'Actor1': {'JScene2':None},
 }
-
-
 
 ]
 
