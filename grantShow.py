@@ -45,7 +45,7 @@ audioPlan = [
 # 'Actor4': {'lineup':None},
 # 'Actor5': {'lineup':None},
 # 'Actor6': {'lineup':None},
- 'Audience': {'lineup':None},
+# 'Audience': {'lineup':None},
 },
 #Seated movements
 {'Actor1': {'JScene1':{1:None}},
@@ -61,7 +61,7 @@ audioPlan = [
 
 
 # create a new show
-show = showisk.Show(names, triggerPhones, audioPlan, audiencePhone='302721088776', username='admin', pswd='L1v3pupp3t5')
+show = showisk.Show(names, triggerPhones, audioPlan, audiencePhone='', username='admin', pswd='L1v3pupp3t5')
 
 # set some configuration parameters. For example the audio directory or the full path for commonly
 # played sounds like the beep or 'press 1'. No need to set everything, there are default values.
