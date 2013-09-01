@@ -48,11 +48,11 @@ audioPlan = [
 # 'Audience': {'lineup':None},
 },
 #Seated movements
-{'Actor1': {'JScene1':{1:None}},
+{'Actor1': {'press1':{1:None}},
 
 },
 #Get headphones then start part 1
-{'Actor1': {'JScene2':None},
+{'Actor1': {'press1':None},
 },
 {'Actor1': {'AScene2':None},
 
