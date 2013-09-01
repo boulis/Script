@@ -36,7 +36,7 @@ class Show:
 		# configuration variables for common sounds. The audio dir is added ONLY to the filenames
 		# in the audio plan, NOT the common sounds variables below.
 		self.audiodir = ''					# a full path to be added to the files in the audio plan
-		self.press1 = '/audio/press1'				# the press 1 sound
+		self.press1 = 'press1'				# the press 1 sound
 		self.beep = 'beep'					# the beep sound, after a button pressed
 		self.tryAgain = 'please-try-again'	# the please try again sound
 		self.whenReconnected = None			# audio to play when reconnecting after hangup
