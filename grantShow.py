@@ -53,8 +53,10 @@ audioPlan = [
 },
 #Get headphones then start part 1
 {'Actor1': {'JScene2':None},
-}
+},
+{'Actor1': {'AScene2':None},
 
+}
 ]
 
 
