@@ -51,11 +51,11 @@ audioPlan = [
 {'Actor1': {'getup':None},
 },
 #Seated movements
-{'Actor1': {'AlScene1':None},
+{'Actor1': {'BScene1':None},
 
 },
 
-{'Actor1': {'AlScene2':None},
+{'Actor1': {'BScene2':None},
 
 },
 
