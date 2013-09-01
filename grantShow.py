@@ -67,7 +67,8 @@ show = showisk.Show(names, triggerPhones, audioPlan, audiencePhone='', username=
 # set some configuration parameters. For example the audio directory or the full path for commonly
 # played sounds like the beep or 'press 1'. No need to set everything, there are default values.
 show.audiodir = '/audio/'
-
+show.press1 = '/audio/press1'
+show.nothuman = '/audio/nothuman'
 # begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
 #show.begin(['61296981940'])
 show.begin(['61413817002'])
