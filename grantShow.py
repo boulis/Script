@@ -54,6 +54,9 @@ audioPlan = [
 #Get headphones then start part 1
 {'Actor1': {'press1':None},
 },
+{'Actor1': {'BLANKFILE':None},
+
+}
 
 ]
 
