@@ -47,13 +47,19 @@ audioPlan = [
 # 'Actor6': {'lineup':None},
 # 'Audience': {'lineup':None},
 },
+#Get headphones then start part 1
+{'Actor1': {'getup':None},
+},
 #Seated movements
-{'Actor1': {'press1':{1:None}},
+{'Actor1': {'AlScene1':None},
 
 },
-#Get headphones then start part 1
-{'Actor1': {'press1':None},
+
+{'Actor1': {'AlScene2':None},
+
 },
+
+
 {'Actor1': {'BLANKFILE':None},
 
 }
