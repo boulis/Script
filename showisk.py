@@ -146,8 +146,8 @@ class Show:
 
 	def _establishCall(self, phone, actorName, press1needed=True, delay=30):
 		'''
-		Multiple threads of this function are started in begin(). Originates a call and then waits for
-		1 to be pressed. If not pressed within <delay> secs, it hangs up the call.
+		Multiple threads of this function are started in begin(). Originates a call and then waits 
+		for 1 to be pressed. If not pressed within <delay> secs, it hangs up the call.
 		'''
 		# originate calls asynchronously so that  multiple calls can be initiated in parallel.
 		# Otherwise a call has to be answered for another one to start ringing, even if
@@ -310,11 +310,11 @@ class Show:
 			actorName = self.actor[event.headers['Uniqueid']]
 			# store the pressed digit, so that other threads can find it
 			self.pressedDTMF[actorName] = int(event.headers['Digit'])
-			# play the beep sound, and don't wait for it to finish
-			self.playback(self.beep, actorName, dir='', waitToEnd=False)
 			# notify the thread waiting for this by setting/trigering the right event
 			# if the event is not there, or is already set, then a thread is not waiting for it
 			if actorName in self.eventsDTMF and not self.eventsDTMF[actorName].is_set():
+				# play the beep sound
+				self.playback(self.beep, actorName, dir='')
 				self.eventsDTMF[actorName].set()
 				print datetime.now(), actorName, "pressed key", event.headers['Digit']
 			else:
@@ -339,10 +339,17 @@ class Show:
 
 	def handle_Hangup(self, event, manager):
 		actorName = event.headers['CallerIDName']
+		uniqID = event.headers['Uniqueid']
 		# Try to reconect only if we are not shutting down and this is an established call
-		if (not self.shuttingDown) and (actorName in self.uniqueID) and (self.uniqueID[actorName] == event.headers['Uniqueid']):
+		if (not self.shuttingDown) and (actorName in self.uniqueID) and (self.uniqueID[actorName] == uniqID):
 			print datetime.now(), actorName, '*Hangup*  Will try to recall.'
-			# first set any events that the existing thread might be waiting on
+			# delete relevant entries from the dictionaries, keep only the phoneNum connection
+			chan = self.channel[actorName]
+			del self.channel[actorName]
+			del self.uniqueID[actorName]
+			del self.actor[uniqID]
+			del self.actorFromChan[chan] 
+			# then set any events that the existing thread might be waiting on
 			if actorName in self.eventsDTMF:
 				self.eventsDTMF[actorName].set()
 			if actorName in self.eventsPlayEnd:
