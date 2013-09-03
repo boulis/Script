@@ -36,11 +36,18 @@ class Show:
 		# configuration variables for common sounds. The audio dir is added ONLY to the filenames
 		# in the audio plan, NOT the common sounds variables below.
 		self.audiodir = ''					# a full path to be added to the files in the audio plan
-		self.press1 = 'press1'				# the press 1 sound
+		self.press1 = 'press-1'				# the press 1 sound
 		self.beep = 'beep'					# the beep sound, after a button pressed
 		self.tryAgain = 'please-try-again'	# the please try again sound
 		self.whenReconnected = None			# audio to play when reconnecting after hangup
 		self.nothuman = None				# an optional sound
+		self.thankyou = 'auth-thankyou'		# saying thank you after establishing a call
+		
+		self.pathToTrunk = 'SIP/didlogic-trunk/'	# where do we place outgoing calls
+		self.defaultOption = 1			# the option returned when no option is given by the user
+										# you can have any key (e.g., 0,1,2,'default') just make
+										# sure this key is always included in the audio plan 
+										# whenever the user has options to take
 		
 		# Dictionaries to hold important info on calls.
 		self.channel = {}	# Referenced with actor name as key
@@ -107,7 +114,7 @@ class Show:
 		# if an audience phone defined then establish a call for the special actor 'Audience'
 		# no need to press 1 to establish the call, so the third argument is False
 		if self.audiencePhone:
-			t = threading.Thread(target=self._establishCall, args=(self.audiencePhone, 'Audience', False))
+			t = threading.Thread(target=self._establishCall, args=(self.audiencePhone, 'Audience', False, 60))
 			t.start()
 			actorThreads.append(t)
 			
@@ -136,7 +143,7 @@ class Show:
 			# wait for all threads to finish before proceeding to the next period
 			for t in actorThreads:
 				t.join()
-
+			print self.channel
 		# remember to clean up
 		self.shuttingDown = True
 		for actorName in self.channel:
@@ -152,7 +159,7 @@ class Show:
 		# originate calls asynchronously so that  multiple calls can be initiated in parallel.
 		# Otherwise a call has to be answered for another one to start ringing, even if
 		# the originate commands are given from different threads
-		response = self.manager.originate('SIP/didlogic-trunk/'+ phone, caller_id=actorName, async=True, exten='callwait', context='testcall', priority='1')
+		response = self.manager.originate(self.pathToTrunk + phone, caller_id=actorName, async=True, exten='callwait', context='testcall', priority='1')
 		print datetime.now(), 'Originating call to', actorName, phone, 'Response:', response
 
 
@@ -164,6 +171,7 @@ class Show:
 			if not press1needed:
 				print datetime.now(), 'Success establishing call to', actorName
 				self.phoneNum[actorName] = phone  # associate phone number with actor
+				self.playback(self.thankyou, actorName, dir='')
 				return True
 			sleep(1) # needs a small delay before the channel becomes valid for playback
 			# if the call is answered, ask for the actor to press 1 (to confirm real interaction)
@@ -171,12 +179,19 @@ class Show:
 			if self.waitToPress1(actorName, delay=delay):
 				print datetime.now(), 'Success establishing call to', actorName
 				self.phoneNum[actorName] = phone  # associate phone number with actor
+				self.playback(self.thankyou, actorName, dir='')
 			else:
 				if self.nothuman: 
 					self.playback(self.nothuman, actorName, dir='')
 				self.manager.hangup(self.channel[actorName])
 				print datetime.now(), 'Call answered but', actorName, 'did not press 1 within', delay, 'secs'
-				# TO DO: remove this actor, channel, and unique ID from the corresponding dictionaries
+				# remove this actor, channel, and unique ID from the corresponding dictionaries
+				chan = self.channel[actorName]
+				uniqID = self.uniqueID[actorName]
+				del self.channel[actorName]
+				del self.uniqueID[actorName]
+				del self.actor[uniqID]
+				del self.actorFromChan[chan] 
 		else:
 			print datetime.now(), 'Call to', actorName, 'was NOT answered'
 
@@ -253,12 +268,13 @@ class Show:
 			print datetime.now(), "Playing audio file", filename, "to", actorName, ". Finished"
 
 
-	def waitForDTMF(self, actorName, plan, delay=10, defaultReturn=1):
+	def waitForDTMF(self, actorName, plan, delay=10, defaultReturn=None):
 		'''
  		Waits for a valid key pressed (DTMF tone) up to <delay> secs.
  		Valid options are taken from the keys of the given <plan>. If not valid option is given
  		within <delay> secs, the default options <defaultReturn> is returned
  		'''
+ 		if defaultReturn is None: defaultReturn = self.defaultOption
 		start = end = time()
 		while end - start < delay:
 			self.eventsDTMF[actorName] = threading.Event()
@@ -313,8 +329,8 @@ class Show:
 			# notify the thread waiting for this by setting/trigering the right event
 			# if the event is not there, or is already set, then a thread is not waiting for it
 			if actorName in self.eventsDTMF and not self.eventsDTMF[actorName].is_set():
-				# play the beep sound
-				self.playback(self.beep, actorName, dir='')
+				# play the beep sound. Decided it's not needed
+				# self.playback(self.beep, actorName, dir='', waitToEnd=False)
 				self.eventsDTMF[actorName].set()
 				print datetime.now(), actorName, "pressed key", event.headers['Digit']
 			else:
@@ -324,8 +340,7 @@ class Show:
 		# we are only issuing exec playback commands so if we receive an End Subevent
 		# it means that the playback is over.
 		if event.headers['SubEvent'] == 'End':
-			actorName = self.actorFromChan[event.headers['Channel']]
-
+			actorName = self.actorFromChan[event.headers['Channel']]			
 			# notify the thread waiting for this by setting/trigering the right event
 			if actorName in self.eventsPlayEnd and not self.eventsPlayEnd[actorName].is_set():
 				self.eventsPlayEnd[actorName].set()
@@ -341,8 +356,8 @@ class Show:
 		actorName = event.headers['CallerIDName']
 		uniqID = event.headers['Uniqueid']
 		# Try to reconect only if we are not shutting down and this is an established call
-		if (not self.shuttingDown) and (actorName in self.uniqueID) and (self.uniqueID[actorName] == uniqID):
-			print datetime.now(), actorName, '*Hangup*  Will try to recall.'
+		if (not self.shuttingDown) and (actorName in self.phoneNum) and (actorName in self.uniqueID) and (self.uniqueID[actorName] == uniqID):
+			print datetime.now(), actorName, '*Hangup*  Will try to call back.'
 			# delete relevant entries from the dictionaries, keep only the phoneNum connection
 			chan = self.channel[actorName]
 			del self.channel[actorName]
@@ -408,24 +423,29 @@ if __name__ == "__main__":
 	{'Actor1': {'welcome':{1:None}},
 	 'Actor2': {'welcome':{1:None}},
 	 'Actor3': {'welcome':{1:None}},
+	 'Audience': {'welcome':{1:None}}
 	},
 
 	# period1
-	{'Actor1': {'tt-monty-knights':{1:'press-1', 2:'press-2', 3:'press-3'}},
+	{'Actor1': {'tt-monty-knights':{1:'priv-introsaved', 2:'priv-callpending', 3:'queue-minutes'}},
 	 'Actor2': {'tt-monty-knights':{1:'good', 2:{'enter-num-blacklist':{1:'press-1', 2:'press-2'}}}},
 	 'Actor3': {'different-file':None},
-	 'Actor4': {'tt-monty-knights':{'play-another-file':None}}
+	 'Actor4': {'tt-monty-knights':{'play-another-file':None}},
+	 'Audience': {'tt-monty-knights':None}
 	},
 
 	#pediod2
 	{'Actor1': {'goodbye':None},
 	 'Actor2': {'goodbye':None},
+	 'Audience': {'goodbye':None},
 	}
 
 	]
 
 	# create a new show
-	show = Show(names, triggerPhones, audioPlan, audiencePhone=None, username='admin', pswd='L1v3pupp3t5')
-	show.whenReconnected = 'hello'
-	# begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
-	show.begin(['306946935055'])
+	show = Show(names, triggerPhones, audioPlan, audiencePhone='302721088776', username='admin', pswd='L1v3pupp3t5')
+	show.whenReconnected = 'hello-world'
+	show.press1 = 'tt-monty-knights'
+	# begin the show. You can pass it a list of phones directly, if you do not want to collect them during preshow
+	show.begin(['306946935055', '61413817002'])
+	#show.begin(['61413817002'])
