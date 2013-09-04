@@ -43,30 +43,24 @@ audioPlan = [
 # 'Actor4': {'lineup':None},
 # 'Actor5': {'lineup':None},
 # 'Actor6': {'lineup':None},
- 'Audience': {'lineup':None},
+# 'Audience': {'lineup':None},
+},
+#Get headphones then start part 1
+{'Actor1': {'getup':None},
 },
 #Seated movements
-{'Actor1': {'julietstart':None},
-
-},
-#Get headphones then start part 1
-{'Actor1': {'julietgetheadphones':{1:'julietpart1', 2:'julieterrorpart1'}},
-},
-#Get headphones then start part 1
-{'Actor1': {'julietpart2':None},
+{'Actor1': {'BScene1':None},
 
 },
 
-# period1
-{'Actor1': {'julietpart3qs':{1:'julietpressed1', 2:'julietpressed2', 3:'julietpressed3'}},
-# 'Actor2': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Actor3': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Actor4': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Actor5': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
-# 'Actor6': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
- 'Audience': {'choose1':{1:'chocolate', 2:'vanilla', 3:'noice'}},
+{'Actor1': {'BScene2':None},
+
+},
+
+
+{'Actor1': {'BLANKFILE':None},
+
 }
-
 
 ]
 
@@ -74,18 +68,22 @@ audioPlan = [
 # create a new show
 show = showisk.Show(names, audioPlan, audiencePhone='', username='admin', pswd='L1v3pupp3t5')
 
+
 # set some configuration parameters. For example the audio directory or the full path for commonly
 # played sounds like the beep or 'press 1'. No need to set everything, there are default values.
 show.audiodir = '/audio/'
 show.whenReconnected = 'hello-world'
+show.press1 = '/audio/press1'
+show.nothuman = '/audio/nothuman'
 show.press1again = 'press-1'		# asked when calling in
 show.triggerPreshow = 'welcome'		# to be played at the trigger phone just before begin()
 show.triggerDuringShow = 'auth-thankyou' # to be played at the trigger phone during begin()
 
 
 # the phones that we can call from to begin the main show. Add as many as you like
-triggerPhones = ['61439588446', '61413817002']
+triggerPhones = ['61413817002']
 # collect phones, you can also add an optional maximum delay in case no call from a trigger phone is made 
 show.collectPhones(triggerPhones)
 # we have collected phones. begin the show
 show.begin()
+
