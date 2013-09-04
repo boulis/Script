@@ -13,6 +13,7 @@ import asterisk.manager
 import sys
 from datetime import datetime
 from time import sleep, time
+from random import shuffle
 import threading
 
 
@@ -22,16 +23,17 @@ class Show:
 	When creating a new object from this class, it initialises several variables and connects to
 	the AMI. Then, by calling begin(), you start the show.
 	'''
-	def __init__(self, names, triggerPhones, audioPlan, audiencePhone=None, server='127.0.0.1', username='admin', pswd=''):
+	def __init__(self, names, audioPlan, audiencePhone=None, server='127.0.0.1', username='admin', pswd=''):
 		'''
 		The constructor for this class needs the names of the actors in a list of strings, the special
 		phone numbers (that give the signal to start the show) again as a list of strings, and the
 		audio plan which should be list of dictionaries.
 		'''
 		self.names = names
-		self.triggerPhones = triggerPhones
 		self.audiencePhone = audiencePhone
 		self.audioPlan = audioPlan
+		self.triggerPhones = []
+		self.collectedPhones = []
 
 		# configuration variables for common sounds. The audio dir is added ONLY to the filenames
 		# in the audio plan, NOT the common sounds variables below.
@@ -42,12 +44,16 @@ class Show:
 		self.whenReconnected = None			# audio to play when reconnecting after hangup
 		self.nothuman = None				# an optional sound
 		self.thankyou = 'auth-thankyou'		# saying thank you after establishing a call
+		self.press1again = 'press-1'		# asked when calling in
+		self.triggerPreshow = 'welcome'		# to be played at the trigger phone just before begin()
+		self.triggerDuringShow = 'auth-thankyou'	# to be played at the trigger phone during begin()
 		
 		self.pathToTrunk = 'SIP/didlogic-trunk/'	# where do we place outgoing calls
 		self.defaultOption = 1			# the option returned when no option is given by the user
 										# you can have any key (e.g., 0,1,2,'default') just make
 										# sure this key is always included in the audio plan 
 										# whenever the user has options to take
+										
 		
 		# Dictionaries to hold important info on calls.
 		self.channel = {}	# Referenced with actor name as key
@@ -61,6 +67,8 @@ class Show:
 		self.eventsCallAnswer = {}
 		self.eventsDTMF = {}
 		self.eventsPlayEnd = {}
+		# event to signify trigger phone to stop the collectPhones function
+		self.eventTrigger = threading.Event()
 
 		# a dictionary to hold the last DTMF pressed, one entry for each actor
 		self.pressedDTMF = {}
@@ -78,10 +86,10 @@ class Show:
 			# register some callbacks
 			self.manager.register_event('Shutdown', self.handle_shutdown) # shutdown
 			self.manager.register_event('NewCallerid', self.handle_NewCallerID)		# the NewCallerid events help us find out the channel and unique id of our call
-			self.manager.register_event('Newexten', self.handle_NewExten)			# the Newexten event help us know when an phone is answered
 			self.manager.register_event('AGIExec', self.handle_AGIExec)				# to know the end of playback
 			self.manager.register_event('DTMF', self.handle_DTMF)					# detected pressed keys
 			self.manager.register_event('Hangup', self.handle_Hangup)				# react to hang ups
+			self.manager.register_event('Newstate', self.handle_Newstate)			# process phones calling in
 			#self.manager.register_event('*', self.handle_event)			# catch all, for debug purposes
 
 		except asterisk.manager.ManagerSocketException, (errno, reason):
@@ -97,12 +105,45 @@ class Show:
 			self.manager.close()
 			sys.exit(1)
 
-
-	def begin(self, phones=[]):
+	def collectPhones(self,triggerPhones=None, delay=None):
+		'''
+		A function to invoke preshow, in order to collect valid phone numbers. Stopped by a special
+		phone(s) calling in and triggering the stop, or a timeout. Most of the work is done in the
+		_testPhone() function invoked as multiple threads in handle_Newchannel()
+		'''
+		if triggerPhones is None and delay is None:
+			delay = 300			# wait for 5 mins and then exit
+		else:
+			self.triggerPhones = triggerPhones
+		
+		print datetime.now(), 'Waiting for incoming calls to be registered, max delay:', delay, 'List of trigger phones', self.triggerPhones
+		self.eventTrigger.wait(delay)
+		
+		# check the reason for stopping to wait
+		if self.eventTrigger.is_set(): 
+			reason = 'call'
+		else: 
+			reason = 'timeout'
+		print datetime.now(), 'Collecting phones finished. Reason:', reason, '. List of collected phones', self.collectedPhones
+		
+		# no need to have this event registered anymore
+		self.manager.unregister_event('Newstate', self.handle_Newstate)
+		
+	def begin(self, phones=None, randomShuffle=True):
 		'''
 		The main function to start the show. It first tries to originate the calls and then begins
 		to execute the plan period by period.
 		'''
+		# the Newexten event help us know when an phone is answered. Used AFTER collectPhones()
+		self.manager.register_event('Newexten', self.handle_NewExten)
+		
+		# if no explicit phone list is given, then use the list that collectPhoneNums() hopefully collected
+		if phones is None: phones = self.collectedPhones
+		# shuffle the order if needed
+		if randomShuffle: shuffle(phones) 
+		
+		print datetime.now(), 'Phones will be linked to actors in this way:', zip(phones, self.names)
+		
 		# First try to originate enough calls, and establish the connection is with a person
 		actorThreads = []
 		for phone, actorName in zip(phones, self.names):
@@ -143,7 +184,7 @@ class Show:
 			# wait for all threads to finish before proceeding to the next period
 			for t in actorThreads:
 				t.join()
-			print self.channel
+
 		# remember to clean up
 		self.shuttingDown = True
 		for actorName in self.channel:
@@ -151,7 +192,7 @@ class Show:
 		self.manager.close()
 
 
-	def _establishCall(self, phone, actorName, press1needed=True, delay=30):
+	def _establishCall(self, phone, actorName, press1needed=True, delay=30, reconnected=False):
 		'''
 		Multiple threads of this function are started in begin(). Originates a call and then waits 
 		for 1 to be pressed. If not pressed within <delay> secs, it hangs up the call.
@@ -180,6 +221,7 @@ class Show:
 				print datetime.now(), 'Success establishing call to', actorName
 				self.phoneNum[actorName] = phone  # associate phone number with actor
 				self.playback(self.thankyou, actorName, dir='')
+				if reconnected: self.playback(self.whenReconnected, actorName, dir='')
 			else:
 				if self.nothuman: 
 					self.playback(self.nothuman, actorName, dir='')
@@ -301,6 +343,43 @@ class Show:
 	def waitToPress1(self, actorName, delay=30):
 		return self.waitForDTMF(actorName, {1:None}, delay, defaultReturn=0)
 
+	def _testPhone(self, phone, channel, uniqueID):
+		'''
+		Called in a thread by handle_Newstate() this function tests whether an incoming call
+		is answered by a human. If so, it stores the number in collectedPhones 
+		'''
+		print datetime.now(), 'Received call from number:', phone, '. Testing suitability'
+		sleep(0.5)
+		# first update the dictionaries, using the phone as the actorName. This way we can use the
+		# same waitForDTMF() and playback() as with the outgoing calls.
+		self.channel[phone] = channel
+		self.actor[uniqueID] = phone
+		self.actorFromChan[channel] = phone
+		
+		if phone in self.triggerPhones:
+			print datetime.now(), 'This is a TRIGGER phone. About to start show.'
+			self.playback(self.triggerPreshow, phone, dir='')
+			# notify the collectPhones() function/thread to exit
+			self.eventTrigger.set()
+			sleep(0.5)
+			self.playback(self.triggerDuringShow, phone, dir='')
+			return
+		
+		self.playback(self.press1, phone, dir='')
+		if not self.waitToPress1(phone): return
+		self.playback(self.press1again, phone, dir='')
+		if not self.waitToPress1(phone): return
+		self.playback(self.thankyou, phone, dir='')
+		
+		# we have established that this phone number is suitable, add it to the list if not there
+		if phone not in self.collectedPhones:
+			print datetime.now(), 'Great, phone number:', phone, 'is suitable.'
+			self.collectedPhones.append(phone)
+		else:
+			print datetime.now(), 'WARNING phone number:', phone, 'already in the list.'
+			
+		print datetime.now(), 'Total collected phones so far:', len(self.collectedPhones)
+		
 	# The rest are functions that we register with the pyst manager to handle AMI events
 
 	def handle_NewCallerID(self, event, manager):
@@ -371,10 +450,29 @@ class Show:
 				self.eventsPlayEnd[actorName].set()				
 			# we could wait for the thread to join (i.e., exit) but there is no need. 
 			sleep(0.5)
-			# establish a new call
-			if self._establishCall(self.phoneNum[actorName], actorName, press1needed=False) and self.whenReconnected:
-				sleep(0.5)
-				self.playback(self.whenReconnected, actorName, dir='')
+			# establish a new call. Start a new thread, we should not do any waiting in handlers
+			# we are still waiting for 1 to be pressed, 30sec max delay, *and* playing the whenReconnected sound
+			t = threading.Thread(target=self._establishCall, args=(self.phoneNum[actorName], actorName, True, 30, True))
+			t.start()
+			
+
+	def handle_Newstate(self, event, manager):
+		cid = event.headers['CallerIDNum']
+		uniqID = event.headers['Uniqueid']
+		chan = event.headers['Channel']
+		
+		# the call has been asnwered. It has to be an incoming call this handler is unregistered 
+		# before we run begin() which makes outgoing calls
+		if event.headers['ChannelStateDesc'] == 'Up':
+			# is it a valid number?
+			try:
+				val = int(cid)
+			except ValueError:
+				print datetime.now(), 'Call in:', cid, 'is not a valid phone number to keep'
+				return
+			# start a new thread to handle this call
+			t = threading.Thread(target=self._testPhone, args=(cid, chan, uniqID))
+			t.start()
 
 		
 	def handle_event(self, event, manager):
@@ -383,7 +481,6 @@ class Show:
 			return
 		print datetime.now(), "Received event: %s" % event.name
 		print event.headers
-
 
 
 # The class defines all we need. We can import this file in our own scripts and create audioplans
@@ -443,9 +540,16 @@ if __name__ == "__main__":
 	]
 
 	# create a new show
-	show = Show(names, triggerPhones, audioPlan, audiencePhone='302721088776', username='admin', pswd='L1v3pupp3t5')
+	show = Show(names, audioPlan, audiencePhone='306946935055', username='admin', pswd='L1v3pupp3t5')
 	show.whenReconnected = 'hello-world'
-	show.press1 = 'tt-monty-knights'
+	#show.press1 = 'tt-monty-knights'
 	# begin the show. You can pass it a list of phones directly, if you do not want to collect them during preshow
-	show.begin(['306946935055', '61413817002'])
+	show.begin(['302721088776', '61413817002'])
 	#show.begin(['61413817002'])
+	
+	# define your trigger phone numbers in a list, run collectPhones(), with optional maximum delay
+	# and then just begin the show
+	triggerPhones = ['61413817002']
+	#show.collectPhones(triggerPhones, delay=200)
+	#show.collectPhones([], delay=150)
+	#show.begin()

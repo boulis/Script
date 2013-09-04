@@ -9,8 +9,6 @@ You can define
 
 # names of the main characters, to make description of the plan and reporting easier
 names = ['Actor1','Actor2','Actor3','Actor4','Actor5','Actor6']
-# the phones that we can call from to begin the main show. Add as many as you like
-triggerPhones = ['61439588446', '61413817002']
 
 '''
 The audio plan is structured as follows: It is a list of periods. A period is the sync checkpoint
@@ -74,12 +72,20 @@ audioPlan = [
 
 
 # create a new show
-show = showisk.Show(names, triggerPhones, audioPlan, audiencePhone='302721088776', username='admin', pswd='L1v3pupp3t5')
+show = showisk.Show(names, audioPlan, audiencePhone='', username='admin', pswd='L1v3pupp3t5')
 
 # set some configuration parameters. For example the audio directory or the full path for commonly
 # played sounds like the beep or 'press 1'. No need to set everything, there are default values.
 show.audiodir = '/audio/'
+show.whenReconnected = 'hello-world'
+show.press1again = 'press-1'		# asked when calling in
+show.triggerPreshow = 'welcome'		# to be played at the trigger phone just before begin()
+show.triggerDuringShow = 'auth-thankyou' # to be played at the trigger phone during begin()
 
-# begin the show. You can pass it a list of phones to bypass the requirement to collect phone # during preshow
-#show.begin(['61296981940'])
-show.begin(['306946935055'])
+
+# the phones that we can call from to begin the main show. Add as many as you like
+triggerPhones = ['61439588446', '61413817002']
+# collect phones, you can also add an optional maximum delay in case no call from a trigger phone is made 
+show.collectPhones(triggerPhones)
+# we have collected phones. begin the show
+show.begin()
