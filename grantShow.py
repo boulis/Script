@@ -60,7 +60,7 @@ show.audiodir = '/audio/'
 show.whenReconnected = 'hello-world'
 show.press1 = '/audio/press1'
 show.nothuman = '/audio/nothuman'
-show.press1again = 'press1'		# asked when calling in
+show.press1again = 'press-1'		# asked when calling in
 show.triggerPreshow = 'welcome'		# to be played at the trigger phone just before begin()
 show.triggerDuringShow = 'auth-thankyou' # to be played at the trigger phone during begin()
 
