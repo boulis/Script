@@ -380,7 +380,7 @@ class Show:
 		else:
 			print datetime.now(), 'WARNING phone number:', phone, 'already in the list.'
 			
-		print datetime.now(), '***** Total collected phones so far: -===-', len(self.collectedPhones), '-===-'
+		print datetime.now(), '*** Total collected phones so far: -===-', len(self.collectedPhones), '-===-  List:', self.collectedPhones
 		
 	# The rest are functions that we register with the pyst manager to handle AMI events
 
