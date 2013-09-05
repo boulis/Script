@@ -38,29 +38,14 @@ the function waitForDTMF
 audioPlan = [
 # Hi to humans
 {'Actor1': {'ishuman':None},
-# 'Actor2': {'lineup':None},
-# 'Actor3': {'lineup':None},
+ 'Actor2': {'ishuman':None},
+ 'Actor3': {'ishuman':None},
 # 'Actor4': {'lineup':None},
 # 'Actor5': {'lineup':None},
 # 'Actor6': {'lineup':None},
 # 'Audience': {'lineup':None},
 },
 #Get headphones then start part 1
-{'Actor1': {'getup':None},
-},
-#Seated movements
-{'Actor1': {'BScene1':None},
-
-},
-
-{'Actor1': {'BScene2':None},
-
-},
-
-
-{'Actor1': {'BLANKFILE':None},
-
-}
 
 ]
 
