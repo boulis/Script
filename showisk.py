@@ -89,7 +89,6 @@ class Show:
 			self.manager.register_event('AGIExec', self.handle_AGIExec)				# to know the end of playback
 			self.manager.register_event('DTMF', self.handle_DTMF)					# detected pressed keys
 			self.manager.register_event('Hangup', self.handle_Hangup)				# react to hang ups
-			self.manager.register_event('Newstate', self.handle_Newstate)			# process phones calling in
 			#self.manager.register_event('*', self.handle_event)			# catch all, for debug purposes
 
 		except asterisk.manager.ManagerSocketException, (errno, reason):
@@ -109,22 +108,25 @@ class Show:
 		'''
 		A function to invoke preshow, in order to collect valid phone numbers. Stopped by a special
 		phone(s) calling in and triggering the stop, or a timeout. Most of the work is done in the
-		_testPhone() function invoked as multiple threads in handle_Newchannel()
+		_testPhone() function invoked as multiple threads in handle_Newstate()
 		'''
+		# register an event to process phones calling in
+		self.manager.register_event('Newstate', self.handle_Newstate)	
+		
 		if triggerPhones is None and delay is None:
 			delay = 300			# wait for 5 mins and then exit
 		else:
 			self.triggerPhones = triggerPhones
 		
-		print datetime.now(), 'Waiting for incoming calls to be registered, max delay:', delay, 'List of trigger phones', self.triggerPhones
+		print datetime.now(), 'Waiting for incoming calls to be registered, max delay:', delay, 'secs. List of trigger phones', self.triggerPhones
 		self.eventTrigger.wait(delay)
 		
 		# check the reason for stopping to wait
 		if self.eventTrigger.is_set(): 
-			reason = 'call'
+			reason = 'trigger call'
 		else: 
 			reason = 'timeout'
-		print datetime.now(), 'Collecting phones finished. Reason:', reason, '. List of collected phones', self.collectedPhones
+		print datetime.now(), '***** Collecting phones finished. Reason:', reason, '. List of collected phones', self.collectedPhones
 		
 		# no need to have this event registered anymore
 		self.manager.unregister_event('Newstate', self.handle_Newstate)
@@ -345,8 +347,8 @@ class Show:
 
 	def _testPhone(self, phone, channel, uniqueID):
 		'''
-		Called in a thread by handle_Newstate() this function tests whether an incoming call
-		is answered by a human. If so, it stores the number in collectedPhones 
+		Called in a thread by handle_Newstate(), this function tests whether an incoming call
+		is answered by a human. If so, it stores the number in self.collectedPhones 
 		'''
 		print datetime.now(), 'Received call from number:', phone, '. Testing suitability'
 		sleep(0.5)
@@ -378,7 +380,7 @@ class Show:
 		else:
 			print datetime.now(), 'WARNING phone number:', phone, 'already in the list.'
 			
-		print datetime.now(), 'Total collected phones so far:', len(self.collectedPhones)
+		print datetime.now(), '***** Total collected phones so far: -===-', len(self.collectedPhones), '-===-'
 		
 	# The rest are functions that we register with the pyst manager to handle AMI events
 
@@ -489,7 +491,6 @@ if __name__ == "__main__":
 
 	# names of the main characters, to make description of the plan and reporting easier
 	names = ['Actor1','Actor2','Actor3','Actor4','Actor5','Actor6']
-	triggerPhones = []
 
 	'''
 	The audio plan is structured as follows: It is a list of periods. A period is the sync checkpoint
@@ -540,16 +541,17 @@ if __name__ == "__main__":
 	]
 
 	# create a new show
-	show = Show(names, audioPlan, audiencePhone='306946935055', username='admin', pswd='L1v3pupp3t5')
+	show = Show(names, audioPlan, audiencePhone=None, username='admin', pswd='L1v3pupp3t5')
+	
+	# you can set several config parameters such as sound files. Look at the beginning of the class
+	# definition to find all the configuration parameters as class attributes
 	show.whenReconnected = 'hello-world'
-	#show.press1 = 'tt-monty-knights'
-	# begin the show. You can pass it a list of phones directly, if you do not want to collect them during preshow
-	show.begin(['302721088776', '61413817002'])
-	#show.begin(['61413817002'])
 	
 	# define your trigger phone numbers in a list, run collectPhones(), with optional maximum delay
-	# and then just begin the show
+	# in secs, and then just begin the show
 	triggerPhones = ['61413817002']
-	#show.collectPhones(triggerPhones, delay=200)
-	#show.collectPhones([], delay=150)
-	#show.begin()
+	show.collectPhones(triggerPhones, delay=150)
+	show.begin()
+	
+	# if you do not want to collect them during preshow then do not call collectPhone() and pass  
+	# a list of phones as an arg to begin() e.g. show.begin(['302101000000', '61413000000'])
