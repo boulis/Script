@@ -44,7 +44,9 @@ class Show:
 		self.whenReconnected = None			# audio to play when reconnecting after hangup
 		self.nothuman = None				# an optional sound
 		self.thankyou = 'auth-thankyou'		# saying thank you after establishing a call
-		self.press1again = 'press-1'		# asked when calling in
+		self.register ='/audio/Register1'
+		self.register2 = '/audio/Register2'		# asked when calling in
+		self.registerconf = '/audio/RegisterConf'
 		self.triggerPreshow = 'welcome'		# to be played at the trigger phone just before begin()
 		self.triggerDuringShow = 'auth-thankyou'	# to be played at the trigger phone during begin()
 		
@@ -367,11 +369,11 @@ class Show:
 			self.playback(self.triggerDuringShow, phone, dir='')
 			return
 		
-		self.playback(self.press1, phone, dir='')
+		self.playback(self.register, phone, dir='')
 		if not self.waitToPress1(phone): return
-		self.playback(self.press1again, phone, dir='')
+		self.playback(self.register2, phone, dir='')
 		if not self.waitToPress1(phone): return
-		self.playback(self.thankyou, phone, dir='')
+		self.playback(self.registerconf, phone, dir='')
 		
 		# we have established that this phone number is suitable, add it to the list if not there
 		if phone not in self.collectedPhones:
