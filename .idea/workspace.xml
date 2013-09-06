@@ -7,7 +7,7 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378453949945" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378454366884" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378454338171" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378433326585" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="2" selection-start="4050" selection-end="4050" vertical-scroll-proportion="1.8484849">
+            <state line="91" column="32" selection-start="4132" selection-end="4132" vertical-scroll-proportion="0.36363637">
               <folding />
             </state>
           </provider>
@@ -298,7 +298,11 @@
       <created>1378453952718</created>
       <updated>1378453952718</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="First full show test (Many filler tracks">
+      <created>1378454369701</created>
+      <updated>1378454369701</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -454,7 +458,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="2" selection-start="4050" selection-end="4050" vertical-scroll-proportion="1.8484849">
+        <state line="91" column="32" selection-start="4132" selection-end="4132" vertical-scroll-proportion="0.36363637">
           <folding />
         </state>
       </provider>
