@@ -373,13 +373,12 @@ class Show:
 		if not self.waitToPress1(phone): return
 		self.playback(self.register2, phone, dir='')
 		if not self.waitToPress1(phone): return
-		self.playback(self.registerconf, phone, dir='')
+
 		
 		# we have established that this phone number is suitable, add it to the list if not there
 		if phone not in self.collectedPhones:
 			print datetime.now(), 'Great, phone number:', phone, 'is suitable.'
 			self.collectedPhones.append(phone)
-			if not self.waitToPress1(phone): return
 			self.playback(self.registerconf, phone, dir='')
 		else:
 			print datetime.now(), 'WARNING phone number:', phone, 'already in the list.'
