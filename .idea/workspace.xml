@@ -7,8 +7,8 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378448340686" ignored="false" />
-    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378452682442" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378452686961" ignored="false" />
+    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378453046014" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378433326585" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="3" selection-start="3716" selection-end="3716" vertical-scroll-proportion="0.8181818">
+            <state line="84" column="3" selection-start="3752" selection-end="3752" vertical-scroll-proportion="0.93939394">
               <folding />
             </state>
           </provider>
@@ -282,7 +282,11 @@
       <created>1378448345642</created>
       <updated>1378448345642</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First full show test (Many filler tracks">
+      <created>1378452690090</created>
+      <updated>1378452690090</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -438,7 +442,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="3" selection-start="3716" selection-end="3716" vertical-scroll-proportion="0.8181818">
+        <state line="84" column="3" selection-start="3752" selection-end="3752" vertical-scroll-proportion="0.93939394">
           <folding />
         </state>
       </provider>
