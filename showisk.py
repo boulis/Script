@@ -231,6 +231,7 @@ class Show:
 					self.playback(self.nothuman, actorName, dir='')
 				self.manager.hangup(self.channel[actorName])
 				print datetime.now(), 'Call answered but', actorName, 'did not press 1 within', delay, 'secs'
+				print datetime.now(), '======================WARNING! PERFORMANCE MUST BE RESTARTED, Please press CTRL Z and run python debuggrantShow.py==========================='
 				# remove this actor, channel, and unique ID from the corresponding dictionaries
 				chan = self.channel[actorName]
 				uniqID = self.uniqueID[actorName]
@@ -379,7 +380,7 @@ class Show:
 		if phone not in self.collectedPhones:
 			print datetime.now(), 'Great, phone number:', phone, 'is suitable.'
 			self.collectedPhones.append(phone)
-			self.playback(self.registerconf, phone, dir='')
+			self.playback(self.registerconf, phone, dir='') #Play the file AFTER the number is registered
 		else:
 			print datetime.now(), 'WARNING phone number:', phone, 'already in the list.'
 			

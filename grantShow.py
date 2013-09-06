@@ -36,18 +36,49 @@ the function waitForDTMF
 '''
 
 audioPlan = [
-# Hi to humans
-{'Actor1': {'ishuman':None},
- 'Actor2': {'ishuman':None},
- 'Actor3': {'ishuman':None},
-# 'Actor4': {'lineup':None},
-# 'Actor5': {'lineup':None},
-# 'Actor6': {'lineup':None},
-# 'Audience': {'lineup':None},
-},
-#Get headphones then start part 1
-
-]
+    # Hi to humans
+    {'Actor1': {'ishuman':None},
+     'Actor2': {'ishuman':None},
+     'Actor3': {'ishuman':None},
+     'Actor4': {'ishuman':None},
+     'Actor5': {'ishuman':None},
+     'Actor6': {'ishuman':None},
+     'Audience': {'welcome':None},
+     },
+    #Get headphones then start part 1
+    {'Actor1': {'Julietpart1':{1:None}},
+     'Actor2': {'Andrewpart1':{1:None}},
+     'Actor3': {'Susiepart1':{1:None}},
+     'Actor4': {'Angelapart1':{1:None}},
+     'Actor5': {'Albertpart1':{1:None}},
+     'Actor6': {'Billpart1':{1:None}},
+     'Audience': {'Audiencepart1':{1:None}},
+     },
+    {'Actor1': {'Julietpart2':None},
+     'Actor2': {'Andrewpart2':None},
+     'Actor3': {'Susiepart2':None},
+     'Actor4': {'Angelapart2':None},
+     'Actor5': {'Albertpart2':None},
+     'Actor6': {'Billpart2':None},
+     'Audience': {'Audiencepart2':None},
+     },
+    {'Actor1': {'Julietpart3':None},
+     'Actor2': {'Andrewpart3':None},
+     'Actor3': {'Susiepart3':None},
+     'Actor4': {'Angelapart3':None},
+     'Actor5': {'Albertpart3':None},
+     'Actor6': {'Billpart3':None},
+     'Audience': {'Audiencepart3':None},
+     },
+    {'Actor1': {'Julietpart4':None},
+     'Actor2': {'Andrewpart4':None},
+     'Actor3': {'Susiepart4':None},
+     'Actor4': {'Angelapart4':None},
+     'Actor5': {'Albertpart4':None},
+     'Actor6': {'Billpart4':None},
+     'Audience': {'Audiencepart4':None},
+     },
+    ]
 
 
 # create a new show
@@ -62,12 +93,12 @@ show.press1 = '/audio/press1'
 show.register ='/audio/Register1'
 show.nothuman = '/audio/nothuman'
 show.register2 = '/audio/Register2'		# asked when calling in
-show.triggerPreshow = 'ShowStarter1'		# to be played at the trigger phone just before begin()
-show.triggerDuringShow = 'ShowStarter2' # to be played at the trigger phone during begin()
+show.triggerPreshow = '/audio/ShowStarter1'		# to be played at the trigger phone just before begin()
+show.triggerDuringShow = '/audio/ShowStarter2' # to be played at the trigger phone during begin()
 show.registerconf = '/audio/RegisterConf'
 
 # the phones that we can call from to begin the main show. Add as many as you like
-triggerPhones = ['']
+triggerPhones = ['61413817002']
 # collect phones, you can also add an optional maximum delay in case no call from a trigger phone is made 
 show.collectPhones(triggerPhones)
 # we have collected phones. begin the show
