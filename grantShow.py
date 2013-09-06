@@ -100,7 +100,8 @@ show.registerconf = '/audio/RegisterConf'
 # the phones that we can call from to begin the main show. Add as many as you like
 triggerPhones = ['61413817002']
 # collect phones, you can also add an optional maximum delay in case no call from a trigger phone is made 
-show.collectPhones(triggerPhones)
+#show.collectPhones(triggerPhones)
+show.begin(['61413817002', '61405585884', '61402337737', '61415732466'])
 # we have collected phones. begin the show
-show.begin()
+#show.begin()
 
