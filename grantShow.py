@@ -59,11 +59,12 @@ show = showisk.Show(names, audioPlan, audiencePhone='', username='admin', pswd='
 show.audiodir = '/audio/'
 show.whenReconnected = 'hello-world'
 show.press1 = '/audio/press1'
+show.register ='/audio/Register1'
 show.nothuman = '/audio/nothuman'
-show.press1again = 'press-1'		# asked when calling in
-show.triggerPreshow = 'welcome'		# to be played at the trigger phone just before begin()
-show.triggerDuringShow = 'auth-thankyou' # to be played at the trigger phone during begin()
-
+show.register2 = '/audio/Register2'		# asked when calling in
+show.triggerPreshow = 'ShowStarter1'		# to be played at the trigger phone just before begin()
+show.triggerDuringShow = 'ShowStarter2' # to be played at the trigger phone during begin()
+show.registerconf = '/audio/RegisterConf'
 
 # the phones that we can call from to begin the main show. Add as many as you like
 triggerPhones = ['61413817002']
