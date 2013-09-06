@@ -67,7 +67,7 @@ show.triggerDuringShow = 'ShowStarter2' # to be played at the trigger phone duri
 show.registerconf = '/audio/RegisterConf'
 
 # the phones that we can call from to begin the main show. Add as many as you like
-triggerPhones = ['61413817002']
+triggerPhones = ['']
 # collect phones, you can also add an optional maximum delay in case no call from a trigger phone is made 
 show.collectPhones(triggerPhones)
 # we have collected phones. begin the show
