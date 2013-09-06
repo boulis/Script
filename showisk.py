@@ -379,6 +379,8 @@ class Show:
 		if phone not in self.collectedPhones:
 			print datetime.now(), 'Great, phone number:', phone, 'is suitable.'
 			self.collectedPhones.append(phone)
+			if not self.waitToPress1(phone): return
+			self.playback(self.registerconf, phone, dir='')
 		else:
 			print datetime.now(), 'WARNING phone number:', phone, 'already in the list.'
 			
