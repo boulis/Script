@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showisk.py" afterPath="$PROJECT_DIR$/showisk.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grantShow.py" afterPath="$PROJECT_DIR$/grantShow.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378592214418" ignored="false" />
-    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378546784574" ignored="false" />
-    <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378547503949" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378592498749" ignored="false" />
+    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378593738062" ignored="false" />
+    <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378593326484" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,19 +29,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="grantShow.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="18" selection-start="4602" selection-end="4602" vertical-scroll-proportion="0.0">
+            <state line="104" column="18" selection-start="4785" selection-end="4785" vertical-scroll-proportion="0.72727275">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showisk.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="showisk.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/showisk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="377" column="0" selection-start="16897" selection-end="16897" vertical-scroll-proportion="0.40726578">
+            <state line="388" column="46" selection-start="17468" selection-end="17468" vertical-scroll-proportion="-260.44">
               <folding />
             </state>
           </provider>
@@ -65,8 +65,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/grantShow.py" />
         <option value="$PROJECT_DIR$/showisk.py" />
+        <option value="$PROJECT_DIR$/grantShow.py" />
       </list>
     </option>
   </component>
@@ -141,6 +141,28 @@
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <method />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Script" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="Python.AppEngineServer" factoryName="App Engine server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -207,8 +229,8 @@
       <method />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Python.grantShow" />
-      <item index="1" class="java.lang.String" itemvalue="Python Remote Debug.Unnamed" />
+      <item index="0" class="java.lang.String" itemvalue="Python Remote Debug.Unnamed" />
+      <item index="1" class="java.lang.String" itemvalue="Python.grantShow" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -284,15 +306,21 @@
       <created>1378554533358</created>
       <updated>1378554533358</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="On Thanassis's advice I've added a waitToEnd prompt to the 2 new playback commands I'd given">
+      <created>1378592502891</created>
+      <updated>1378592502891</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.60101867" order="0" side_tool="false" content_ui="combo" />
@@ -304,8 +332,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -353,7 +379,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added audio if someone registers twice and added 'registerfail' parameter" />
+    <option name="LAST_COMMIT_MESSAGE" value="On Thanassis's advice I've added a waitToEnd prompt to the 2 new playback commands I'd given" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -371,6 +397,7 @@
     <MESSAGE value="First full show test (Many filler tracks" />
     <MESSAGE value="Testing after earlier bug with registration" />
     <MESSAGE value="Added audio if someone registers twice and added 'registerfail' parameter" />
+    <MESSAGE value="On Thanassis's advice I've added a waitToEnd prompt to the 2 new playback commands I'd given" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -454,16 +481,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grantShow.py">
+    <entry file="file://$PROJECT_DIR$/showisk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="18" selection-start="4602" selection-end="4602" vertical-scroll-proportion="0.0">
+        <state line="388" column="46" selection-start="17468" selection-end="17468" vertical-scroll-proportion="-260.44">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/showisk.py">
+    <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="377" column="0" selection-start="16897" selection-end="16897" vertical-scroll-proportion="0.40726578">
+        <state line="104" column="18" selection-start="4785" selection-end="4785" vertical-scroll-proportion="0.72727275">
           <folding />
         </state>
       </provider>
