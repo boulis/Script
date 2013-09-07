@@ -47,6 +47,7 @@ class Show:
 		self.register ='/audio/Register1'
 		self.register2 = '/audio/Register2'		# asked when calling in
 		self.registerconf = '/audio/RegisterConf'
+		self.registerfail = '/audio/RegisterFail'
 		self.triggerPreshow = 'welcome'		# to be played at the trigger phone just before begin()
 		self.triggerDuringShow = 'auth-thankyou'	# to be played at the trigger phone during begin()
 		
@@ -383,6 +384,7 @@ class Show:
 			self.playback(self.registerconf, phone, dir='') #Play the file AFTER the number is registered
 		else:
 			print datetime.now(), 'WARNING phone number:', phone, 'already in the list.'
+			self.playback(self.registerfail, phone, dir='') #Error File
 			
 		print datetime.now(), '*** Total collected phones so far: -===-', len(self.collectedPhones), '-===-  List:', self.collectedPhones
 		
