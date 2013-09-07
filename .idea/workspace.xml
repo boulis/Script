@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="">
+    <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="First full show test (Many filler tracks">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grantShow.py" afterPath="$PROJECT_DIR$/grantShow.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378454366884" ignored="false" />
-    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378454338171" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378546808636" ignored="false" />
+    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378546784574" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378433326585" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="32" selection-start="4132" selection-end="4132" vertical-scroll-proportion="0.36363637">
+            <state line="100" column="18" selection-start="4602" selection-end="4602" vertical-scroll-proportion="1.060606">
               <folding />
             </state>
           </provider>
@@ -136,12 +136,12 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="sshConsole" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="sshConsole" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -302,14 +302,17 @@
       <created>1378454369701</created>
       <updated>1378454369701</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="First full show test (Many filler tracks">
+      <created>1378459199529</created>
+      <updated>1378459199529</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -324,6 +327,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767403" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -401,6 +405,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/showisk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="235" column="46" selection-start="10817" selection-end="10817" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grantShow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -458,7 +476,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="32" selection-start="4132" selection-end="4132" vertical-scroll-proportion="0.36363637">
+        <state line="100" column="18" selection-start="4602" selection-end="4602" vertical-scroll-proportion="1.060606">
           <folding />
         </state>
       </provider>
