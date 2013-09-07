@@ -109,7 +109,7 @@ triggerPhones = ['']
 # collect phones, you can also add an optional maximum delay in case no call from a trigger phone is made 
 while True:
     show.collectPhones(triggerPhones)
-except KeyboardInterrupt
+except KeyboardInterrupt:
     show.begin()
 
 #show.begin(['61413817002', '61405585884', '61402337737', '61415732466'])
