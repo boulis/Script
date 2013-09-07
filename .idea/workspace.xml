@@ -7,8 +7,8 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378593877061" ignored="false" />
-    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378594094544" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378594110353" ignored="false" />
+    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378594190540" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378593326484" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="12" selection-start="4338" selection-end="4338" vertical-scroll-proportion="0.42424244">
+            <state line="106" column="22" selection-start="4685" selection-end="4685" vertical-scroll-proportion="0.6363636">
               <folding>
                 <element signature="e#20#34#0" expanded="true" />
               </folding>
@@ -320,7 +320,11 @@
       <created>1378593881201</created>
       <updated>1378593881201</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Testing backup if trigger doesn't work">
+      <created>1378594113970</created>
+      <updated>1378594113970</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -511,7 +515,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="12" selection-start="4338" selection-end="4338" vertical-scroll-proportion="0.42424244">
+        <state line="106" column="22" selection-start="4685" selection-end="4685" vertical-scroll-proportion="0.6363636">
           <folding>
             <element signature="e#20#34#0" expanded="true" />
           </folding>
