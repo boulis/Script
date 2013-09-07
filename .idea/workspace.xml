@@ -7,7 +7,7 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378594223171" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378594274860" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378594262103" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378593326484" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="16" selection-start="4679" selection-end="4679" vertical-scroll-proportion="0.6363636">
+            <state line="108" column="105" selection-start="4872" selection-end="4872" vertical-scroll-proportion="0.6666667">
               <folding>
                 <element signature="e#20#34#0" expanded="true" />
               </folding>
@@ -43,7 +43,7 @@
       <file leaf-file-name="showisk.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/showisk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="326" column="13" selection-start="14904" selection-end="14909" vertical-scroll-proportion="-0.84">
+            <state line="376" column="47" selection-start="16896" selection-end="16896" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -332,7 +332,11 @@
       <created>1378594225900</created>
       <updated>1378594225900</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Testing backup if trigger doesn't work">
+      <created>1378594277462</created>
+      <updated>1378594277462</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -516,14 +520,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/showisk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="326" column="13" selection-start="14904" selection-end="14909" vertical-scroll-proportion="-0.84">
+        <state line="376" column="47" selection-start="16896" selection-end="16896" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="16" selection-start="4679" selection-end="4679" vertical-scroll-proportion="0.6363636">
+        <state line="108" column="105" selection-start="4872" selection-end="4872" vertical-scroll-proportion="0.6666667">
           <folding>
             <element signature="e#20#34#0" expanded="true" />
           </folding>
