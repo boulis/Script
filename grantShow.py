@@ -1,6 +1,13 @@
 #! /usr/bin/python
 
 import showisk
+import signal
+import sys
+
+def signal_handler(signal, frame):
+        print 'You pressed Ctrl+C!'
+        sys.exit(0)
+signal.signal(signal.SIGINT, signal_handler)
 
 ''' 
 Create a show based on the functionality provided in showisk.py.
@@ -100,7 +107,7 @@ show.registerconf = '/audio/RegisterConf'
 # the phones that we can call from to begin the main show. Add as many as you like
 triggerPhones = ['']
 # collect phones, you can also add an optional maximum delay in case no call from a trigger phone is made 
-while input != contr-c:
+while not KeyboardInterrupt:
     show.collectPhones(triggerPhones)
 
 #show.begin(['61413817002', '61405585884', '61402337737', '61415732466'])
