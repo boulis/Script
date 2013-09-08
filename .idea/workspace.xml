@@ -7,7 +7,7 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378611216899" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378611568092" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378611215029" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378593326484" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="9" selection-start="223" selection-end="223" vertical-scroll-proportion="0.36363637">
+            <state line="103" column="0" selection-start="4554" selection-end="4554" vertical-scroll-proportion="0.5151515">
               <folding />
             </state>
           </provider>
@@ -41,7 +41,7 @@
       <file leaf-file-name="showisk.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/showisk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="480" column="30" selection-start="21998" selection-end="21998" vertical-scroll-proportion="26.0">
+            <state line="480" column="30" selection-start="21998" selection-end="21998" vertical-scroll-proportion="-300.56">
               <folding />
             </state>
           </provider>
@@ -352,7 +352,11 @@
       <created>1378611220018</created>
       <updated>1378611220018</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Testing slpit files">
+      <created>1378611572726</created>
+      <updated>1378611572726</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -535,14 +539,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/showisk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="480" column="30" selection-start="21998" selection-end="21998" vertical-scroll-proportion="26.0">
+        <state line="480" column="30" selection-start="21998" selection-end="21998" vertical-scroll-proportion="-300.56">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="9" selection-start="223" selection-end="223" vertical-scroll-proportion="0.36363637">
+        <state line="103" column="0" selection-start="4554" selection-end="4554" vertical-scroll-proportion="0.5151515">
           <folding />
         </state>
       </provider>

@@ -101,9 +101,7 @@ show.register2 = '/audio/Register2'		# asked when calling in
 show.triggerPreshow = '/audio/ShowStarter1'		# to be played at the trigger phone just before begin()
 show.triggerDuringShow = '/audio/ShowStarter2' # to be played at the trigger phone during begin()
 show.registerconf = '/audio/RegisterConf'
-show.tryAgain = 'please-try-again'
-show.whenReconnected = None
-show.thankyou = 'auth-thankyou'
+
 
 # the phones that we can call from to begin the main show. Add as many as you like
 triggerPhones = ['']
