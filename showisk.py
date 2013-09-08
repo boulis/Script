@@ -481,8 +481,6 @@ class Show:
 			# start a new thread to handle this call
 			t = threading.Thread(target=self._testPhone, args=(cid, chan, uniqID))
 			t.start()
-
-		
 	def handle_event(self, event, manager):
 		# This is a catch-all handler for debugging. However, we can safely ignore some events.
 		if (event.name == 'RTCPReceived') or (event.name == 'RTCPSent'):
