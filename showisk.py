@@ -553,9 +553,10 @@ if __name__ == "__main__":
 	
 	# define your trigger phone numbers in a list, run collectPhones(), with optional maximum delay
 	# in secs, and then just begin the show
-	triggerPhones = ['61413817002']
-	show.collectPhones(triggerPhones, delay=150)
-	show.begin()
+	#triggerPhones = ['61413817002']
+    show.begin(['61413817002'])
+	#show.collectPhones(triggerPhones, delay=150)
+	#show.begin()
 	
 	# if you do not want to collect them during preshow then do not call collectPhone() and pass  
 	# a list of phones as an arg to begin() e.g. show.begin(['302101000000', '61413000000'])
