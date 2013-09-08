@@ -554,7 +554,7 @@ if __name__ == "__main__":
 	# define your trigger phone numbers in a list, run collectPhones(), with optional maximum delay
 	# in secs, and then just begin the show
 	#triggerPhones = ['61413817002']
-    show.begin(['61413817002'])
+	show.begin(['61413817002'])
 	#show.collectPhones(triggerPhones, delay=150)
 	#show.begin()
 	

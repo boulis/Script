@@ -7,7 +7,7 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378612244962" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378612499647" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378611215029" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378612438504" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,7 +41,7 @@
       <file leaf-file-name="showisk.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/showisk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="558" column="5" selection-start="26010" selection-end="26010" vertical-scroll-proportion="1.4875717">
+            <state line="556" column="4" selection-start="25930" selection-end="25930" vertical-scroll-proportion="0.6099426">
               <folding />
             </state>
           </provider>
@@ -360,7 +360,11 @@
       <created>1378612247618</created>
       <updated>1378612247618</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Redial has stopped working - testing">
+      <created>1378612459540</created>
+      <updated>1378612459540</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -429,7 +433,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing slpit files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redial has stopped working - testing" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -451,6 +455,7 @@
     <MESSAGE value="Testing backup if trigger doesn't work" />
     <MESSAGE value="Undid those testing changes" />
     <MESSAGE value="Testing slpit files" />
+    <MESSAGE value="Redial has stopped working - testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -550,7 +555,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/showisk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="558" column="5" selection-start="26010" selection-end="26010" vertical-scroll-proportion="1.4875717">
+        <state line="556" column="4" selection-start="25930" selection-end="25930" vertical-scroll-proportion="0.6099426">
           <folding />
         </state>
       </provider>
