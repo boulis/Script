@@ -10,7 +10,7 @@ You can define
 '''
 
 # names of the main characters, to make description of the plan and reporting easier
-names = ['Test','Juliet','Andrew','Susie','Angela','Albert','Bill']
+names = ['Juliet','Andrew','Susie','Angela','Albert','Bill']
 
 '''
 The audio plan is structured as follows: It is a list of periods. A period is the sync checkpoint
@@ -39,8 +39,8 @@ the function waitForDTMF
 
 audioPlan = [
     # Hi to humans
-    {'Test': {'ishuman':None},
-     #'Juliet': {'ishuman':None},
+    {
+     'Juliet': {'ishuman':None},
      #'Andrew': {'ishuman':None},
      #'Susie': {'ishuman':None},
      #'Angela': {'ishuman':None},
@@ -49,8 +49,8 @@ audioPlan = [
      'Audience': {'welcome':None},
      },
     #Get headphones then start part 1
-    {'Test': {'test2':None},
-    #'Juliet': {'Julietpart1':{1:None}},
+    {
+    'Juliet': {'Julietpart1':{1:None}},
     # 'Andrew': {'Andrewpart1':{1:None}},
     # 'Susie':  {'Susiepart1':{1:None}},
     # 'Angela': {'Angelapart1':{1:None}},
