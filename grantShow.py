@@ -1,13 +1,8 @@
 #! /usr/bin/python
 
 import showisk
-import signal
-import sys
 
-def signal_handler(signal, frame):
-        print 'You pressed Ctrl+C!'
-        sys.exit(0)
-signal.signal(signal.SIGINT, signal_handler)
+
 
 ''' 
 Create a show based on the functionality provided in showisk.py.
@@ -15,7 +10,7 @@ You can define
 '''
 
 # names of the main characters, to make description of the plan and reporting easier
-names = ['Juliet','Andrew','Susie','Angela','Albert','Bill','Test']
+names = ['Test','Juliet','Andrew','Susie','Angela','Albert','Bill']
 
 '''
 The audio plan is structured as follows: It is a list of periods. A period is the sync checkpoint
@@ -72,22 +67,22 @@ audioPlan = [
     #'Bill': : {'Billpart2':None},
      'Audience': {'Audiencepart2':None},
      },
-    {'Juliet': {'Julietpart3':None},
-     'Andrew': {'Andrewpart3':None},
-     'Susie':  {'Susiepart3':None},
-     'Angela': {'Angelapart3':None},
-    #'Albert':  {'Albertpart3':None},
-    #'Bill':   {'Billpart3':None},
-     'Audience': {'Audiencepart3':None},
-     },
-    {'Juliet': {'Julietpart4':None},
-     'Andrew': {'Andrewpart4':None},
-     'Susie':  {'Susiepart4':None},
-     'Angela': {'Angelapart4':None},
- #   'Albert': {'Albertpart4':None},
- #   'Bill': : {'Billpart4':None},
-     'Audience': {'Audiencepart4':None},
-     },
+ #   {'Juliet': {'Julietpart3':None},
+ #    'Andrew': {'Andrewpart3':None},
+ #    'Susie':  {'Susiepart3':None},
+ #    'Angela': {'Angelapart3':None},
+ #   #'Albert':  {'Albertpart3':None},
+ #   #'Bill':   {'Billpart3':None},
+ #    'Audience': {'Audiencepart3':None},
+ #    },
+ #   {'Juliet': {'Julietpart4':None},
+ #    'Andrew': {'Andrewpart4':None},
+ #    'Susie':  {'Susiepart4':None},
+ #    'Angela': {'Angelapart4':None},
+ ##   'Albert': {'Albertpart4':None},
+ ##   'Bill': : {'Billpart4':None},
+ #    'Audience': {'Audiencepart4':None},
+ #    },
     ]
 
 
