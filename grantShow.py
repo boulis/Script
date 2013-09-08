@@ -15,7 +15,7 @@ You can define
 '''
 
 # names of the main characters, to make description of the plan and reporting easier
-names = ['Actor1','Actor2','Actor3','Actor4','Actor5','Actor6']
+names = ['Juliet','Andrew','Susie','Angela','Albert','Bill','Test']
 
 '''
 The audio plan is structured as follows: It is a list of periods. A period is the sync checkpoint
@@ -44,45 +44,48 @@ the function waitForDTMF
 
 audioPlan = [
     # Hi to humans
-    {'Actor1': {'ishuman':None},
-     'Actor2': {'ishuman':None},
-     'Actor3': {'ishuman':None},
-     'Actor4': {'ishuman':None},
-     #'Actor5': {'ishuman':None},
-     #'Actor6': {'ishuman':None},
+    {'Test': {'test1':None},
+     #'Juliet': {'ishuman':None},
+     #'Andrew': {'ishuman':None},
+     #'Susie': {'ishuman':None},
+     #'Angela': {'ishuman':None},
+     #'Albert': {'ishuman':None},
+     #'Bill': {'ishuman':None},
      'Audience': {'welcome':None},
      },
     #Get headphones then start part 1
-    {'Actor1': {'Julietpart1':{1:None}},
-     'Actor2': {'Andrewpart1':{1:None}},
-     'Actor3': {'Susiepart1':{1:None}},
-     'Actor4': {'Angelapart1':{1:None}},
-    # 'Actor5': {'Albertpart1':{1:None}},
-    # 'Actor6': {'Billpart1':{1:None}},
+    {'Test': {'test2':None},
+    #'Juliet': {'Julietpart1':{1:None}},
+    # 'Andrew': {'Andrewpart1':{1:None}},
+    # 'Susie':  {'Susiepart1':{1:None}},
+    # 'Angela': {'Angelapart1':{1:None}},
+    #'Albert': {'Albertpart1':{1:None}},
+    #'Bill': : {'Billpart1':{1:None}},
      'Audience': {'Audiencepart1':{1:None}},
      },
-    {'Actor1': {'Julietpart2':None},
-     'Actor2': {'Andrewpart2':None},
-     'Actor3': {'Susiepart2':None},
-     'Actor4': {'Angelapart2':None},
-   #  'Actor5': {'Albertpart2':None},
-    # 'Actor6': {'Billpart2':None},
+    {'Test': {'test3':None},
+    #'Juliet': {'Julietpart2':None},
+    # 'Andrew': {'Andrewpart2':None},
+    # 'Susie':  {'Susiepart2':None},
+    # 'Angela': {'Angelapart2':None},
+    #'Albert': {'Albertpart2':None},
+    #'Bill': : {'Billpart2':None},
      'Audience': {'Audiencepart2':None},
      },
-    {'Actor1': {'Julietpart3':None},
-     'Actor2': {'Andrewpart3':None},
-     'Actor3': {'Susiepart3':None},
-     'Actor4': {'Angelapart3':None},
-  #   'Actor5': {'Albertpart3':None},
-   #  'Actor6': {'Billpart3':None},
+    {'Juliet': {'Julietpart3':None},
+     'Andrew': {'Andrewpart3':None},
+     'Susie':  {'Susiepart3':None},
+     'Angela': {'Angelapart3':None},
+    #'Albert':  {'Albertpart3':None},
+    #'Bill':   {'Billpart3':None},
      'Audience': {'Audiencepart3':None},
      },
-    {'Actor1': {'Julietpart4':None},
-     'Actor2': {'Andrewpart4':None},
-     'Actor3': {'Susiepart4':None},
-     'Actor4': {'Angelapart4':None},
- #    'Actor5': {'Albertpart4':None},
- #    'Actor6': {'Billpart4':None},
+    {'Juliet': {'Julietpart4':None},
+     'Andrew': {'Andrewpart4':None},
+     'Susie':  {'Susiepart4':None},
+     'Angela': {'Angelapart4':None},
+ #   'Albert': {'Albertpart4':None},
+ #   'Bill': : {'Billpart4':None},
      'Audience': {'Audiencepart4':None},
      },
     ]
@@ -103,11 +106,15 @@ show.register2 = '/audio/Register2'		# asked when calling in
 show.triggerPreshow = '/audio/ShowStarter1'		# to be played at the trigger phone just before begin()
 show.triggerDuringShow = '/audio/ShowStarter2' # to be played at the trigger phone during begin()
 show.registerconf = '/audio/RegisterConf'
+show.tryAgain = 'please-try-again'
+show.whenReconnected = None
+show.thankyou = 'auth-thankyou'
 
 # the phones that we can call from to begin the main show. Add as many as you like
 triggerPhones = ['']
+#show.collectPhones(triggerPhones)
 # collect phones, you can also add an optional maximum delay in case no call from a trigger phone is made
-#show.begin(['61413817002', '61405585884', '61402337737', '61415732466'])
-# we have collected phones. begin the show
-show.begin()
+show.begin(['61413817002'])
+# we have collected phones. begin the show#
+#show.begin()
 
