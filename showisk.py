@@ -44,7 +44,10 @@ class Show:
 		self.whenReconnected = None			# audio to play when reconnecting after hangup
 		self.nothuman = None				# an optional sound
 		self.thankyou = 'auth-thankyou'		# saying thank you after establishing a call
-		self.press1again = 'press-1'		# asked when calling in
+		self.register ='/audio/Register1'
+		self.register2 = '/audio/Register2'		# asked when calling in
+		self.registerconf = '/audio/RegisterConf'
+		self.registerfail = '/audio/RegisterFail'
 		self.triggerPreshow = 'welcome'		# to be played at the trigger phone just before begin()
 		self.triggerDuringShow = 'auth-thankyou'	# to be played at the trigger phone during begin()
 
@@ -229,6 +232,7 @@ class Show:
 					self.playback(self.nothuman, actorName, dir='')
 				self.manager.hangup(self.channel[actorName])
 				print datetime.now(), 'Call answered but', actorName, 'did not press 1 within', delay, 'secs'
+				print datetime.now(), '======================WARNING! PERFORMANCE MUST BE RESTARTED, Please press CTRL Z and run python debuggrantShow.py==========================='
 				# remove this actor, channel, and unique ID from the corresponding dictionaries
 				chan = self.channel[actorName]
 				uniqID = self.uniqueID[actorName]
@@ -367,18 +371,20 @@ class Show:
 			self.playback(self.triggerDuringShow, phone, dir='')
 			return
 
-		self.playback(self.press1, phone, dir='')
+		self.playback(self.register, phone, dir='')
 		if not self.waitToPress1(phone): return
-		self.playback(self.press1again, phone, dir='')
+		self.playback(self.register2, phone, dir='')
 		if not self.waitToPress1(phone): return
-		self.playback(self.thankyou, phone, dir='')
+
 
 		# we have established that this phone number is suitable, add it to the list if not there
 		if phone not in self.collectedPhones:
 			print datetime.now(), 'Great, phone number:', phone, 'is suitable.'
 			self.collectedPhones.append(phone)
+			self.playback(self.registerconf, phone, dir='', waitToEnd=False) #Play the file AFTER the number is registered
 		else:
 			print datetime.now(), 'WARNING phone number:', phone, 'already in the list.'
+			self.playback(self.registerfail, phone, dir='', waitToEnd=False) #Error File
 
 		print datetime.now(), '*** Total collected phones so far: -===-', len(self.collectedPhones), '-===-  List:', self.collectedPhones
 
@@ -475,8 +481,6 @@ class Show:
 			# start a new thread to handle this call
 			t = threading.Thread(target=self._testPhone, args=(cid, chan, uniqID))
 			t.start()
-
-
 	def handle_event(self, event, manager):
 		# This is a catch-all handler for debugging. However, we can safely ignore some events.
 		if (event.name == 'RTCPReceived') or (event.name == 'RTCPSent'):
@@ -549,8 +553,9 @@ if __name__ == "__main__":
 
 	# define your trigger phone numbers in a list, run collectPhones(), with optional maximum delay
 	# in secs, and then just begin the show
-	triggerPhones = ['']
-	#show.collectPhones(triggerPhones, delay=150)
-	show.begin(['61413817002'])
+	triggerPhones = ['61413817002']
+	show.collectPhones(triggerPhones, delay=150)
+	show.begin()
+
 	# if you do not want to collect them during preshow then do not call collectPhone() and pass
 	# a list of phones as an arg to begin() e.g. show.begin(['302101000000', '61413000000'])
