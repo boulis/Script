@@ -44,20 +44,17 @@ class Show:
 		self.whenReconnected = None			# audio to play when reconnecting after hangup
 		self.nothuman = None				# an optional sound
 		self.thankyou = 'auth-thankyou'		# saying thank you after establishing a call
-		self.register ='/audio/Register1'
-		self.register2 = '/audio/Register2'		# asked when calling in
-		self.registerconf = '/audio/RegisterConf'
-		self.registerfail = '/audio/RegisterFail'
+		self.press1again = 'press-1'		# asked when calling in
 		self.triggerPreshow = 'welcome'		# to be played at the trigger phone just before begin()
 		self.triggerDuringShow = 'auth-thankyou'	# to be played at the trigger phone during begin()
-		
+
 		self.pathToTrunk = 'SIP/didlogic-trunk/'	# where do we place outgoing calls
 		self.defaultOption = 1			# the option returned when no option is given by the user
 										# you can have any key (e.g., 0,1,2,'default') just make
-										# sure this key is always included in the audio plan 
+										# sure this key is always included in the audio plan
 										# whenever the user has options to take
-										
-		
+
+
 		# Dictionaries to hold important info on calls.
 		self.channel = {}	# Referenced with actor name as key
 		self.uniqueID = {}	# Referenced with actor name as key
@@ -77,7 +74,7 @@ class Show:
 		self.pressedDTMF = {}
 
 		self.shuttingDown = False	# flag to inform handle_Hangup() not to try to reconnect
-		
+
 		# the AMI manager to interact with Asterisk
 		self.manager = asterisk.manager.Manager()
 
@@ -114,26 +111,26 @@ class Show:
 		_testPhone() function invoked as multiple threads in handle_Newstate()
 		'''
 		# register an event to process phones calling in
-		self.manager.register_event('Newstate', self.handle_Newstate)	
-		
+		self.manager.register_event('Newstate', self.handle_Newstate)
+
 		if triggerPhones is None and delay is None:
 			delay = 300			# wait for 5 mins and then exit
 		else:
 			self.triggerPhones = triggerPhones
-		
+
 		print datetime.now(), 'Waiting for incoming calls to be registered, max delay:', delay, 'secs. List of trigger phones', self.triggerPhones
 		self.eventTrigger.wait(delay)
-		
+
 		# check the reason for stopping to wait
-		if self.eventTrigger.is_set(): 
+		if self.eventTrigger.is_set():
 			reason = 'trigger call'
-		else: 
+		else:
 			reason = 'timeout'
 		print datetime.now(), '***** Collecting phones finished. Reason:', reason, '. List of collected phones', self.collectedPhones
-		
+
 		# no need to have this event registered anymore
 		self.manager.unregister_event('Newstate', self.handle_Newstate)
-		
+
 	def begin(self, phones=None, randomShuffle=True):
 		'''
 		The main function to start the show. It first tries to originate the calls and then begins
@@ -141,14 +138,14 @@ class Show:
 		'''
 		# the Newexten event help us know when an phone is answered. Used AFTER collectPhones()
 		self.manager.register_event('Newexten', self.handle_NewExten)
-		
+
 		# if no explicit phone list is given, then use the list that collectPhoneNums() hopefully collected
 		if phones is None: phones = self.collectedPhones
 		# shuffle the order if needed
-		if randomShuffle: shuffle(phones) 
-		
+		if randomShuffle: shuffle(phones)
+
 		print datetime.now(), 'Phones will be linked to actors in this way:', zip(phones, self.names)
-		
+
 		# First try to originate enough calls, and establish the connection is with a person
 		actorThreads = []
 		for phone, actorName in zip(phones, self.names):
@@ -156,14 +153,14 @@ class Show:
 			t = threading.Thread(target=self._establishCall, args=(phone, actorName))
 			t.start()
 			actorThreads.append(t)
-		
+
 		# if an audience phone defined then establish a call for the special actor 'Audience'
 		# no need to press 1 to establish the call, so the third argument is False
 		if self.audiencePhone:
 			t = threading.Thread(target=self._establishCall, args=(self.audiencePhone, 'Audience', False, 60))
 			t.start()
 			actorThreads.append(t)
-			
+
 		# wait for all threads to finish before proceeding
 		for t in actorThreads:
 			t.join()
@@ -199,7 +196,7 @@ class Show:
 
 	def _establishCall(self, phone, actorName, press1needed=True, delay=30, reconnected=False):
 		'''
-		Multiple threads of this function are started in begin(). Originates a call and then waits 
+		Multiple threads of this function are started in begin(). Originates a call and then waits
 		for 1 to be pressed. If not pressed within <delay> secs, it hangs up the call.
 		'''
 		# originate calls asynchronously so that  multiple calls can be initiated in parallel.
@@ -228,18 +225,17 @@ class Show:
 				self.playback(self.thankyou, actorName, dir='')
 				if reconnected: self.playback(self.whenReconnected, actorName, dir='')
 			else:
-				if self.nothuman: 
+				if self.nothuman:
 					self.playback(self.nothuman, actorName, dir='')
 				self.manager.hangup(self.channel[actorName])
 				print datetime.now(), 'Call answered but', actorName, 'did not press 1 within', delay, 'secs'
-				print datetime.now(), '======================WARNING! PERFORMANCE MUST BE RESTARTED, Please press CTRL Z and run python debuggrantShow.py==========================='
 				# remove this actor, channel, and unique ID from the corresponding dictionaries
 				chan = self.channel[actorName]
 				uniqID = self.uniqueID[actorName]
 				del self.channel[actorName]
 				del self.uniqueID[actorName]
 				del self.actor[uniqID]
-				del self.actorFromChan[chan] 
+				del self.actorFromChan[chan]
 		else:
 			print datetime.now(), 'Call to', actorName, 'was NOT answered'
 
@@ -352,7 +348,7 @@ class Show:
 	def _testPhone(self, phone, channel, uniqueID):
 		'''
 		Called in a thread by handle_Newstate(), this function tests whether an incoming call
-		is answered by a human. If so, it stores the number in self.collectedPhones 
+		is answered by a human. If so, it stores the number in self.collectedPhones
 		'''
 		print datetime.now(), 'Received call from number:', phone, '. Testing suitability'
 		sleep(0.5)
@@ -361,7 +357,7 @@ class Show:
 		self.channel[phone] = channel
 		self.actor[uniqueID] = phone
 		self.actorFromChan[channel] = phone
-		
+
 		if phone in self.triggerPhones:
 			print datetime.now(), 'This is a TRIGGER phone. About to start show.'
 			self.playback(self.triggerPreshow, phone, dir='')
@@ -370,24 +366,22 @@ class Show:
 			sleep(0.5)
 			self.playback(self.triggerDuringShow, phone, dir='')
 			return
-		
-		self.playback(self.register, phone, dir='')
-		if not self.waitToPress1(phone): return
-		self.playback(self.register2, phone, dir='')
-		if not self.waitToPress1(phone): return
 
-		
+		self.playback(self.press1, phone, dir='')
+		if not self.waitToPress1(phone): return
+		self.playback(self.press1again, phone, dir='')
+		if not self.waitToPress1(phone): return
+		self.playback(self.thankyou, phone, dir='')
+
 		# we have established that this phone number is suitable, add it to the list if not there
 		if phone not in self.collectedPhones:
 			print datetime.now(), 'Great, phone number:', phone, 'is suitable.'
 			self.collectedPhones.append(phone)
-			self.playback(self.registerconf, phone, dir='', waitToEnd=False) #Play the file AFTER the number is registered
 		else:
 			print datetime.now(), 'WARNING phone number:', phone, 'already in the list.'
-			self.playback(self.registerfail, phone, dir='', waitToEnd=False) #Error File
-			
+
 		print datetime.now(), '*** Total collected phones so far: -===-', len(self.collectedPhones), '-===-  List:', self.collectedPhones
-		
+
 	# The rest are functions that we register with the pyst manager to handle AMI events
 
 	def handle_NewCallerID(self, event, manager):
@@ -427,7 +421,7 @@ class Show:
 		# we are only issuing exec playback commands so if we receive an End Subevent
 		# it means that the playback is over.
 		if event.headers['SubEvent'] == 'End':
-			actorName = self.actorFromChan[event.headers['Channel']]			
+			actorName = self.actorFromChan[event.headers['Channel']]
 			# notify the thread waiting for this by setting/trigering the right event
 			if actorName in self.eventsPlayEnd and not self.eventsPlayEnd[actorName].is_set():
 				self.eventsPlayEnd[actorName].set()
@@ -450,26 +444,26 @@ class Show:
 			del self.channel[actorName]
 			del self.uniqueID[actorName]
 			del self.actor[uniqID]
-			del self.actorFromChan[chan] 
+			del self.actorFromChan[chan]
 			# then set any events that the existing thread might be waiting on
 			if actorName in self.eventsDTMF:
 				self.eventsDTMF[actorName].set()
 			if actorName in self.eventsPlayEnd:
-				self.eventsPlayEnd[actorName].set()				
-			# we could wait for the thread to join (i.e., exit) but there is no need. 
+				self.eventsPlayEnd[actorName].set()
+			# we could wait for the thread to join (i.e., exit) but there is no need.
 			sleep(0.5)
 			# establish a new call. Start a new thread, we should not do any waiting in handlers
 			# we are still waiting for 1 to be pressed, 30sec max delay, *and* playing the whenReconnected sound
 			t = threading.Thread(target=self._establishCall, args=(self.phoneNum[actorName], actorName, True, 30, True))
 			t.start()
-			
+
 
 	def handle_Newstate(self, event, manager):
 		cid = event.headers['CallerIDNum']
 		uniqID = event.headers['Uniqueid']
 		chan = event.headers['Channel']
-		
-		# the call has been asnwered. It has to be an incoming call this handler is unregistered 
+
+		# the call has been asnwered. It has to be an incoming call this handler is unregistered
 		# before we run begin() which makes outgoing calls
 		if event.headers['ChannelStateDesc'] == 'Up':
 			# is it a valid number?
@@ -481,6 +475,8 @@ class Show:
 			# start a new thread to handle this call
 			t = threading.Thread(target=self._testPhone, args=(cid, chan, uniqID))
 			t.start()
+
+
 	def handle_event(self, event, manager):
 		# This is a catch-all handler for debugging. However, we can safely ignore some events.
 		if (event.name == 'RTCPReceived') or (event.name == 'RTCPSent'):
@@ -546,17 +542,15 @@ if __name__ == "__main__":
 
 	# create a new show
 	show = Show(names, audioPlan, audiencePhone=None, username='admin', pswd='L1v3pupp3t5')
-	
+
 	# you can set several config parameters such as sound files. Look at the beginning of the class
 	# definition to find all the configuration parameters as class attributes
 	show.whenReconnected = 'hello-world'
-	
+
 	# define your trigger phone numbers in a list, run collectPhones(), with optional maximum delay
 	# in secs, and then just begin the show
-	#triggerPhones = ['61413817002']
-	show.begin(['61413817002'])
+	triggerPhones = ['']
 	#show.collectPhones(triggerPhones, delay=150)
-	#show.begin()
-	
-	# if you do not want to collect them during preshow then do not call collectPhone() and pass  
+	show.begin(['61413817002'])
+	# if you do not want to collect them during preshow then do not call collectPhone() and pass
 	# a list of phones as an arg to begin() e.g. show.begin(['302101000000', '61413000000'])

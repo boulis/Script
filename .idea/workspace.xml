@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="">
+    <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="Redial has stopped working - testing">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showisk.py" afterPath="$PROJECT_DIR$/showisk.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378612499647" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378612654884" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378611215029" ignored="false" />
-    <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378612438504" ignored="false" />
+    <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378612651440" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +41,7 @@
       <file leaf-file-name="showisk.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/showisk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="556" column="4" selection-start="25930" selection-end="25930" vertical-scroll-proportion="0.6099426">
+            <state line="551" column="22" selection-start="25392" selection-end="25392" vertical-scroll-proportion="0.6828358">
               <folding />
             </state>
           </provider>
@@ -364,7 +364,11 @@
       <created>1378612459540</created>
       <updated>1378612459540</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Redial has stopped working - testing">
+      <created>1378612502934</created>
+      <updated>1378612502934</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -555,7 +559,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/showisk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="556" column="4" selection-start="25930" selection-end="25930" vertical-scroll-proportion="0.6099426">
+        <state line="551" column="22" selection-start="25392" selection-end="25392" vertical-scroll-proportion="0.6828358">
           <folding />
         </state>
       </provider>
