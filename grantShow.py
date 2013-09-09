@@ -150,7 +150,7 @@ audioPlan = [
 
 
 # create a new show
-show = showisk.Show(names, audioPlan, audiencePhone='0412591161', username='admin', pswd='L1v3pupp3t5')
+show = showisk.Show(names, audioPlan, audiencePhone='61412591161', username='admin', pswd='L1v3pupp3t5')
 
 
 # set some configuration parameters. For example the audio directory or the full path for commonly
@@ -161,8 +161,8 @@ show.press1 = '/audio/press1'
 show.register ='/audio/Register1'
 show.nothuman = '/audio/nothuman'
 show.register2 = '/audio/Register2'		# asked when calling in
-show.triggerPreshow = '/audio/ShowStarter1'		# to be played at the trigger phone just before begin()
-show.triggerDuringShow = '/audio/ShowStarter2' # to be played at the trigger phone during begin()
+show.triggerPreshow = '/audio/ShowStart1'		# to be played at the trigger phone just before begin()
+show.triggerDuringShow = '/audio/ShowStart2' # to be played at the trigger phone during begin()
 show.registerconf = '/audio/RegisterConf'
 show.tryAgain = '/audio/please-try-again'
 show.whenReconnected = '/audio/reconnected'
