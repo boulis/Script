@@ -7,8 +7,8 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378720222176" ignored="false" />
-    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378720252068" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378720257766" ignored="false" />
+    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378720943916" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378612651440" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="179" column="1" selection-start="6852" selection-end="6852" vertical-scroll-proportion="0.6666667">
+            <state line="49" column="1" selection-start="2549" selection-end="2549" vertical-scroll-proportion="0.42424244">
               <folding />
             </state>
           </provider>
@@ -408,7 +408,11 @@
       <created>1378720224820</created>
       <updated>1378720224820</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Monday preview show">
+      <created>1378720261963</created>
+      <updated>1378720261963</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -615,7 +619,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="1" selection-start="6852" selection-end="6852" vertical-scroll-proportion="0.6666667">
+        <state line="49" column="1" selection-start="2549" selection-end="2549" vertical-scroll-proportion="0.42424244">
           <folding />
         </state>
       </provider>

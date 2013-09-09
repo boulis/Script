@@ -39,23 +39,23 @@ the function waitForDTMF
 
 audioPlan = [
     # Hi to humans
-    {
-     'Juliet': {'ishuman':None},
-     'Andrew': {'ishuman':None},
-     'Susie': {'ishuman':None},
-     'Angela': {'ishuman':None},
-     'Albert': {'ishuman':None},
-     'Bill': {'ishuman':None},
-     'Audience': {'':None},
-     },
+#  {
+#   'Juliet': {'ishuman':None},
+#   'Andrew': {'ishuman':None},
+#   'Susie': {'ishuman':None},
+#   'Angela': {'ishuman':None},
+#   'Albert': {'ishuman':None},
+#   'Bill': {'ishuman':None},
+#   'Audience': {'':None},
+#   },
     #Get headphones then start part 1
     {
-    'Juliet': {'Julietstart':{1:None}},
-    'Andrew': {'Andrewstart':{1:None}},
-    'Susie':  {'Susiestart':{1:None}},
-    'Angela': {'Angelastart':{1:None}},
-    'Albert': {'Albertstart':{1:None}},
-    'Bill':   {'Billstart':{1:None}},
+    'Juliet': {'Julietstart':None},
+    'Andrew': {'Andrewstart':None},
+    'Susie':  {'Susiestart':None},
+    'Angela': {'Angelastart':None},
+    'Albert': {'Albertstart':None},
+    'Bill':   {'Billstart':None},
     'Audience': {'Audiencestart':None},
      },
     {'Juliet': {'Juliet01':None},
@@ -181,5 +181,5 @@ show.thankyou = '/audio/thankyou'
 #show.collectPhones(triggerPhones)
 # collect phones, you can also add an optional maximum delay in case no call from a trigger phone is made
 # we have collected phones. begin the show#
-show.begin(['61411111485', '61438871792', '61438790492', '61431629015', '61402337737', '61402029053'])
+show.begin([('61411111485', 'Juliet'), ('61438871792', 'Andrew'), ('61403822304', 'Susie'), ('61431629015', 'Angela'), ('61402337737', 'Albert'), ('61405732466', 'Bill')])
 
