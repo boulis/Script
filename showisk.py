@@ -316,7 +316,7 @@ class Show:
 			print datetime.now(), "Playing audio file", filename, "to", actorName, ". Finished"
 
 
-	def waitForDTMF(self, actorName, plan, delay=10, defaultReturn=None):
+	def waitForDTMF(self, actorName, plan, delay=8, defaultReturn=None):
 		'''
  		Waits for a valid key pressed (DTMF tone) up to <delay> secs.
  		Valid options are taken from the keys of the given <plan>. If not valid option is given
