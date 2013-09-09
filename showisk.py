@@ -381,10 +381,10 @@ class Show:
 		if phone not in self.collectedPhones:
 			print datetime.now(), 'Great, phone number:', phone, 'is suitable.'
 			self.collectedPhones.append(phone)
-			self.playback(self.registerconf, phone, dir='') #Play the file AFTER the number is registered
+			self.playback(self.registerconf, phone, dir='', waitToEnd=False) #Play the file AFTER the number is registered
 		else:
 			print datetime.now(), 'WARNING phone number:', phone, 'already in the list.'
-			self.playback(self.registerfail, phone, dir='') #Error File
+			self.playback(self.registerfail, phone, dir='', waitToEnd=False) #Error File
 
 		print datetime.now(), '*** Total collected phones so far: -===-', len(self.collectedPhones), '-===-  List:', self.collectedPhones
 
