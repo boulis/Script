@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grantShow.py" afterPath="$PROJECT_DIR$/grantShow.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378720949289" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378721167329" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378720943916" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378612651440" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +31,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="183" column="77" selection-start="7113" selection-end="7113" vertical-scroll-proportion="0.75757575">
+            <state line="183" column="171" selection-start="7207" selection-end="7207" vertical-scroll-proportion="0.93939394">
               <folding />
             </state>
           </provider>
@@ -416,7 +415,15 @@
       <created>1378720952925</created>
       <updated>1378720952925</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Monday preview show">
+      <created>1378721080560</created>
+      <updated>1378721080561</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Monday preview show">
+      <created>1378721169902</created>
+      <updated>1378721169902</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -623,7 +630,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="77" selection-start="7113" selection-end="7113" vertical-scroll-proportion="0.75757575">
+        <state line="183" column="171" selection-start="7207" selection-end="7207" vertical-scroll-proportion="0.93939394">
           <folding />
         </state>
       </provider>
