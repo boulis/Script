@@ -372,7 +372,7 @@ class Show:
 			self.playback(self.triggerDuringShow, phone, dir='')
 			return
 
-		#sleep(0.5)
+		sleep(0.5)
 		self.playback(self.register, phone, dir='')
 		if not self.waitToPress1(phone): return
 		self.playback(self.register2, phone, dir='')

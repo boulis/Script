@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grantShow.py" afterPath="$PROJECT_DIR$/grantShow.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showisk.py" afterPath="$PROJECT_DIR$/showisk.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735335881" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735394167" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735192706" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,19 +29,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="grantShow.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="177" column="18" selection-start="6888" selection-end="6888" vertical-scroll-proportion="0.6666667">
+            <state line="177" column="18" selection-start="6888" selection-end="6888" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showisk.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="showisk.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/showisk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="555" column="18" selection-start="25725" selection-end="25725" vertical-scroll-proportion="0.0">
+            <state line="374" column="8" selection-start="16685" selection-end="16685" vertical-scroll-proportion="0.6277372">
               <folding />
             </state>
           </provider>
@@ -66,8 +66,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/showisk.py" />
         <option value="$PROJECT_DIR$/grantShow.py" />
+        <option value="$PROJECT_DIR$/showisk.py" />
       </list>
     </option>
   </component>
@@ -460,7 +460,11 @@
       <created>1378735338314</created>
       <updated>1378735338314</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Trying to replicate earlier fault - Seems Async doesn't work on incoming sometimes. Trying it now as it was - fix will involve adding a delay before playback">
+      <created>1378735396820</created>
+      <updated>1378735396820</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -529,7 +533,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Monday preview show" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to replicate earlier fault - Seems Async doesn't work on incoming sometimes. Trying it now as it was - fix will involve adding a delay before playback" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -554,6 +558,7 @@
     <MESSAGE value="Redial has stopped working - testing" />
     <MESSAGE value="Seems redial has stopped working for some other reason - reverted to old code and it still wasn't working. Will try restart. Not sure what happened" />
     <MESSAGE value="Monday preview show" />
+    <MESSAGE value="Trying to replicate earlier fault - Seems Async doesn't work on incoming sometimes. Trying it now as it was - fix will involve adding a delay before playback" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -658,16 +663,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/showisk.py">
+    <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="555" column="18" selection-start="25725" selection-end="25725" vertical-scroll-proportion="0.0">
+        <state line="177" column="18" selection-start="6888" selection-end="6888" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grantShow.py">
+    <entry file="file://$PROJECT_DIR$/showisk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="177" column="18" selection-start="6888" selection-end="6888" vertical-scroll-proportion="0.6666667">
+        <state line="374" column="8" selection-start="16685" selection-end="16685" vertical-scroll-proportion="0.6277372">
           <folding />
         </state>
       </provider>
