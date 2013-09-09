@@ -7,7 +7,7 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378718143568" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378720087955" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378715433143" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378612651440" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="25" selection-start="3165" selection-end="3165" vertical-scroll-proportion="0.54545456">
+            <state line="181" column="28" selection-start="6945" selection-end="6945" vertical-scroll-proportion="0.72727275">
               <folding />
             </state>
           </provider>
@@ -400,7 +400,11 @@
       <created>1378718146447</created>
       <updated>1378718146447</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Monday preview show">
+      <created>1378720092545</created>
+      <updated>1378720092545</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -607,7 +611,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="25" selection-start="3165" selection-end="3165" vertical-scroll-proportion="0.54545456">
+        <state line="181" column="28" selection-start="6945" selection-end="6945" vertical-scroll-proportion="0.72727275">
           <folding />
         </state>
       </provider>
