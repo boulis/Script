@@ -364,6 +364,7 @@ class Show:
 
 		if phone in self.triggerPhones:
 			print datetime.now(), 'This is a TRIGGER phone. About to start show.'
+			sleep(0.5)
 			self.playback(self.triggerPreshow, phone, dir='')
 			# notify the collectPhones() function/thread to exit
 			self.eventTrigger.set()
@@ -371,6 +372,7 @@ class Show:
 			self.playback(self.triggerDuringShow, phone, dir='')
 			return
 
+		sleep(0.5)
 		self.playback(self.register, phone, dir='')
 		if not self.waitToPress1(phone): return
 		self.playback(self.register2, phone, dir='')
