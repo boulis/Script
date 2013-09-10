@@ -175,8 +175,8 @@ show.whenReconnected = '/audio/reconnected'
 show.thankyou = '/audio/thankyou'
 
 # the phones that we can call from to begin the main show. Add as many as you like
-#triggerPhones = ['']
-#show.collectPhones(triggerPhones)
+triggerPhones = ['']
+show.collectPhones(triggerPhones)
 # collect phones, you can also add an optional maximum delay in case no call from a trigger phone is made
 # we have collected phones. begin the show#
 #show.begin()
