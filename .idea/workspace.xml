@@ -7,7 +7,7 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378786854537" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378792026691" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378782721495" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="182" column="24" selection-start="7147" selection-end="7147" vertical-scroll-proportion="0.8181818">
+            <state line="159" column="53" selection-start="6026" selection-end="6026" vertical-scroll-proportion="0.121212125">
               <folding />
             </state>
           </provider>
@@ -480,7 +480,11 @@
       <created>1378786857631</created>
       <updated>1378786857632</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Testing the press 1 instructions again">
+      <created>1378792029379</created>
+      <updated>1378792029379</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -690,7 +694,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="24" selection-start="7147" selection-end="7147" vertical-scroll-proportion="0.8181818">
+        <state line="159" column="53" selection-start="6026" selection-end="6026" vertical-scroll-proportion="0.121212125">
           <folding />
         </state>
       </provider>
