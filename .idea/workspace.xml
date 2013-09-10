@@ -7,7 +7,7 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735486164" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378782740447" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378782721495" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="182" column="24" selection-start="7115" selection-end="7115" vertical-scroll-proportion="0.8181818">
+            <state line="153" column="4" selection-start="5835" selection-end="5835" vertical-scroll-proportion="0.8484849">
               <folding />
             </state>
           </provider>
@@ -468,7 +468,11 @@
       <created>1378735489020</created>
       <updated>1378735489020</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Testing the press 1 instructions again">
+      <created>1378782742413</created>
+      <updated>1378782742413</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -537,7 +541,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying the fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing the press 1 instructions again" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -564,6 +568,7 @@
     <MESSAGE value="Monday preview show" />
     <MESSAGE value="Trying to replicate earlier fault - Seems Async doesn't work on incoming sometimes. Trying it now as it was - fix will involve adding a delay before playback" />
     <MESSAGE value="Trying the fix" />
+    <MESSAGE value="Testing the press 1 instructions again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -677,7 +682,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="24" selection-start="7115" selection-end="7115" vertical-scroll-proportion="0.8181818">
+        <state line="153" column="4" selection-start="5835" selection-end="5835" vertical-scroll-proportion="0.8484849">
           <folding />
         </state>
       </provider>
