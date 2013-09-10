@@ -157,7 +157,7 @@ audioPlan = [
 
 # create a new show
 # show = showisk.Show(names, audioPlan, audiencePhone='61412591161', username='admin', pswd='L1v3pupp3t5')
-show = showisk.Show(names, audioPlan, audiencePhone='', username='admin', pswd='L1v3pupp3t5')
+show = showisk.Show(names, audioPlan, audiencePhone='61413817002', username='admin', pswd='L1v3pupp3t5')
 
 
 # set some configuration parameters. For example the audio directory or the full path for commonly
