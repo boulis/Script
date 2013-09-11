@@ -195,6 +195,5 @@ show.thankyou = '/audio/thankyou'
 #show.collectPhones(triggerPhones)
 # collect phones, you can also add an optional maximum delay in case no call from a trigger phone is made
 # we have collected phones. begin the show#
-show.begin([('61435360526', 'Juliet'), ('61434942802', 'Andrew'), ('61437915481', 'Susie'), ('61414988433', 'Angela'), ('61437015655', 'Albert'), ('61404504804', 'Bill')]
-)
+show.begin([('61435360526', 'Juliet'), ('61434942802', 'Andrew'), ('61437915481', 'Susie'), ('61414988433', 'Angela'), ('61437015655', 'Albert'), ('61404504804', 'Bill')])
 #show.begin(['61413817002'])
