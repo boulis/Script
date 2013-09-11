@@ -152,6 +152,22 @@ audioPlan = [
      'Bill':   {'Bill12':None},
      'Audience': {'Audience12':None},
     },
+    {'Juliet': {'Juliet13':None},
+     'Andrew': {'Andrew13':None},
+     'Susie':  {'Susie13':None},
+     'Angela': {'Angela13':None},
+     'Albert': {'Albert13':None},
+     'Bill':   {'Bill13':None},
+     'Audience': {'Audience13':None},
+    },
+    {'Juliet': {'Juliet14':None},
+     'Andrew': {'Andrew14':None},
+     'Susie':  {'Susie14':None},
+     'Angela': {'Angela14':None},
+     'Albert': {'Albert14':None},
+     'Bill':   {'Bill14':None},
+     'Audience': {'Audience14':None},
+    },
     ]
 
 
