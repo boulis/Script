@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="Testing the press 1 instructions again">
+    <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grantShow.py" afterPath="$PROJECT_DIR$/grantShow.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378889458064" ignored="false" />
-    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378797258340" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378889854132" ignored="false" />
+    <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378893376653" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +32,7 @@
       <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="172" column="0" selection-start="6337" selection-end="6337" vertical-scroll-proportion="0.8181818">
+            <state line="198" column="0" selection-start="7869" selection-end="7869" vertical-scroll-proportion="0.8484849">
               <folding />
             </state>
           </provider>
@@ -500,7 +500,11 @@
       <created>1378797358532</created>
       <updated>1378797358533</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Second Show - 14 tracks">
+      <created>1378889856234</created>
+      <updated>1378889856234</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -569,7 +573,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing the press 1 instructions again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second Show - 14 tracks" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -597,6 +601,7 @@
     <MESSAGE value="Trying to replicate earlier fault - Seems Async doesn't work on incoming sometimes. Trying it now as it was - fix will involve adding a delay before playback" />
     <MESSAGE value="Trying the fix" />
     <MESSAGE value="Testing the press 1 instructions again" />
+    <MESSAGE value="Second Show - 14 tracks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -710,7 +715,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="0" selection-start="6337" selection-end="6337" vertical-scroll-proportion="0.8181818">
+        <state line="198" column="0" selection-start="7869" selection-end="7869" vertical-scroll-proportion="0.8484849">
           <folding />
         </state>
       </provider>
