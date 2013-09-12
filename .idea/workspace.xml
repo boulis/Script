@@ -7,10 +7,10 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378944531008" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378944671347" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378893376653" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
-    <file path="/debugger.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378944427462" ignored="false" />
+    <file path="/debugger.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378945073915" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,7 @@
       <file leaf-file-name="debugger.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/debugger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="197" column="35" selection-start="7624" selection-end="7624" vertical-scroll-proportion="0.7878788">
+            <state line="194" column="0" selection-start="7403" selection-end="7403" vertical-scroll-proportion="0.6969697">
               <folding />
             </state>
           </provider>
@@ -51,7 +51,7 @@
       <file leaf-file-name="showisk.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/showisk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="510" column="35" selection-start="0" selection-end="26125" vertical-scroll-proportion="0.0">
+            <state line="136" column="26" selection-start="6080" selection-end="6080" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -543,7 +543,11 @@
       <created>1378944534730</created>
       <updated>1378944534730</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Trying to replicate errors + Trying a better way to recover from errors">
+      <created>1378944675382</created>
+      <updated>1378944675382</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -612,7 +616,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second Show - 14 tracks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to replicate errors + Trying a better way to recover from errors" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -641,6 +645,7 @@
     <MESSAGE value="Trying the fix" />
     <MESSAGE value="Testing the press 1 instructions again" />
     <MESSAGE value="Second Show - 14 tracks" />
+    <MESSAGE value="Trying to replicate errors + Trying a better way to recover from errors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -747,7 +752,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/showisk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="510" column="35" selection-start="0" selection-end="26125" vertical-scroll-proportion="0.0">
+        <state line="136" column="26" selection-start="6080" selection-end="6080" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -761,7 +766,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/debugger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="35" selection-start="7624" selection-end="7624" vertical-scroll-proportion="0.7878788">
+        <state line="194" column="0" selection-start="7403" selection-end="7403" vertical-scroll-proportion="0.6969697">
           <folding />
         </state>
       </provider>
