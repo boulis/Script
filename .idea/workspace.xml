@@ -7,7 +7,7 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378958486351" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378958519772" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378893376653" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
     <file path="/debugger.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378958518308" ignored="false" />
@@ -42,7 +42,7 @@
       <file leaf-file-name="debugger.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/debugger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="197" column="34" selection-start="7623" selection-end="7623" vertical-scroll-proportion="0.7878788">
+            <state line="197" column="13" selection-start="7602" selection-end="7602" vertical-scroll-proportion="0.7878788">
               <folding />
             </state>
           </provider>
@@ -575,7 +575,11 @@
       <created>1378958489070</created>
       <updated>1378958489070</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Trying to replicate errors + Trying a better way to recover from errors">
+      <created>1378958521969</created>
+      <updated>1378958521969</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -794,7 +798,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/debugger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="34" selection-start="7623" selection-end="7623" vertical-scroll-proportion="0.7878788">
+        <state line="197" column="13" selection-start="7602" selection-end="7602" vertical-scroll-proportion="0.7878788">
           <folding />
         </state>
       </provider>
