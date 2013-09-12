@@ -7,7 +7,7 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378963293892" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378963373203" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378893376653" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
     <file path="/debugger.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378959028467" ignored="false" />
@@ -41,19 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crapversion.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crapversion.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="4" selection-start="2599" selection-end="2599" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="debugger.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/debugger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="33" selection-start="5088" selection-end="5088" vertical-scroll-proportion="0.6977612">
+            <state line="49" column="34" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.28544775">
               <folding />
             </state>
           </provider>
@@ -631,7 +622,11 @@
       <created>1378963296727</created>
       <updated>1378963296727</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Trying to replicate errors + Trying a better way to recover from errors">
+      <created>1378963376185</created>
+      <updated>1378963376185</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -866,7 +861,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/debugger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="33" selection-start="5088" selection-end="5088" vertical-scroll-proportion="0.6977612">
+        <state line="49" column="34" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.28544775">
           <folding />
         </state>
       </provider>
