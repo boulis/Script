@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/showiskdebug.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/debugger.py" afterPath="$PROJECT_DIR$/debugger.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378958519772" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378958563819" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378893376653" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
-    <file path="/debugger.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378958518308" ignored="false" />
+    <file path="/debugger.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378958753077" ignored="false" />
+    <file path="/showiskdebug.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378958904908" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,20 +41,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="debugger.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="debugger.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/debugger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="197" column="13" selection-start="7602" selection-end="7602" vertical-scroll-proportion="0.7878788">
+            <state line="167" column="27" selection-start="6285" selection-end="6285" vertical-scroll-proportion="-113.56">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showisk.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="showisk.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/showisk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="26" selection-start="6080" selection-end="6080" vertical-scroll-proportion="0.0">
+            <state line="221" column="38" selection-start="9791" selection-end="9791" vertical-scroll-proportion="0.24817519">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showiskdebug.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/showiskdebug.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="204" column="69" selection-start="8867" selection-end="8867" vertical-scroll-proportion="-11.04">
+              <folding>
+                <element signature="e#535#558#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,6 +92,7 @@
         <option value="$PROJECT_DIR$/showisk.py" />
         <option value="$PROJECT_DIR$/grantShow.py" />
         <option value="$PROJECT_DIR$/debugger.py" />
+        <option value="$PROJECT_DIR$/showiskdebug.py" />
       </list>
     </option>
   </component>
@@ -579,7 +593,11 @@
       <created>1378958521969</created>
       <updated>1378958521969</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Trying to replicate errors + Trying a better way to recover from errors">
+      <created>1378958566475</created>
+      <updated>1378958566475</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -782,9 +800,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/showisk.py">
+    <entry file="file://$PROJECT_DIR$/debugger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="26" selection-start="6080" selection-end="6080" vertical-scroll-proportion="0.0">
+        <state line="167" column="27" selection-start="6285" selection-end="6285" vertical-scroll-proportion="-113.56">
           <folding />
         </state>
       </provider>
@@ -796,9 +814,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/debugger.py">
+    <entry file="file://$PROJECT_DIR$/showiskdebug.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="13" selection-start="7602" selection-end="7602" vertical-scroll-proportion="0.7878788">
+        <state line="204" column="69" selection-start="8867" selection-end="8867" vertical-scroll-proportion="-11.04">
+          <folding>
+            <element signature="e#535#558#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showisk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="221" column="38" selection-start="9791" selection-end="9791" vertical-scroll-proportion="0.24817519">
           <folding />
         </state>
       </provider>

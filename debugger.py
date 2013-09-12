@@ -1,6 +1,6 @@
 #! /usr/bin/python
 
-import showisk
+import showiskdebug
 
 
 
@@ -172,8 +172,8 @@ audioPlan = [
 
 
 # create a new show
-show = showisk.Show(names, audioPlan, audiencePhone='', username='admin', pswd='L1v3pupp3t5')
-#show = showisk.Show(names, audioPlan, audiencePhone='', username='admin', pswd='L1v3pupp3t5')
+show = showiskdebug.Show(names, audioPlan, audiencePhone='', username='admin', pswd='L1v3pupp3t5')
+#show = showiskdebug.Show(names, audioPlan, audiencePhone='', username='admin', pswd='L1v3pupp3t5')
 
 
 # set some configuration parameters. For example the audio directory or the full path for commonly
@@ -195,5 +195,5 @@ show.thankyou = '/audio/thankyou'
 #show.collectPhones(triggerPhones)
 # collect phones, you can also add an optional maximum delay in case no call from a trigger phone is made
 # we have collected phones. begin the show#
-show.begin([['61413817002','Juliet'],randomShuffle=False)
+show.begin(['111','111','111','111','111','111'],randomShuffle=False)
 #show.begin(['61413817002'])
