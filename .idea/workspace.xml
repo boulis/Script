@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crapversion.py" afterPath="$PROJECT_DIR$/crapversion.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/debugger.py" afterPath="$PROJECT_DIR$/debugger.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showiskdebug.py" afterPath="$PROJECT_DIR$/showiskdebug.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378962920655" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378963096658" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378893376653" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
     <file path="/debugger.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378959028467" ignored="false" />
@@ -51,19 +50,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="debugger.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="debugger.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/debugger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="197" column="25" selection-start="7629" selection-end="7629" vertical-scroll-proportion="0.7779851">
+            <state line="197" column="40" selection-start="7644" selection-end="7644" vertical-scroll-proportion="-16.68">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showiskdebug.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="showiskdebug.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/showiskdebug.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="538" column="0" selection-start="24724" selection-end="24724" vertical-scroll-proportion="-17.36">
+            <state line="201" column="55" selection-start="8673" selection-end="8673" vertical-scroll-proportion="0.09751434">
               <folding>
                 <element signature="e#535#558#0" expanded="true" />
               </folding>
@@ -101,9 +100,9 @@
       <list>
         <option value="$PROJECT_DIR$/showisk.py" />
         <option value="$PROJECT_DIR$/grantShow.py" />
-        <option value="$PROJECT_DIR$/showiskdebug.py" />
         <option value="$PROJECT_DIR$/crapversion.py" />
         <option value="$PROJECT_DIR$/debugger.py" />
+        <option value="$PROJECT_DIR$/showiskdebug.py" />
       </list>
     </option>
   </component>
@@ -624,7 +623,11 @@
       <created>1378962923299</created>
       <updated>1378962923299</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Trying to replicate errors + Trying a better way to recover from errors">
+      <created>1378963100239</created>
+      <updated>1378963100239</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -848,19 +851,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/showiskdebug.py">
+    <entry file="file://$PROJECT_DIR$/debugger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="538" column="0" selection-start="24724" selection-end="24724" vertical-scroll-proportion="-17.36">
-          <folding>
-            <element signature="e#535#558#0" expanded="true" />
-          </folding>
+        <state line="197" column="40" selection-start="7644" selection-end="7644" vertical-scroll-proportion="-16.68">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/debugger.py">
+    <entry file="file://$PROJECT_DIR$/showiskdebug.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="25" selection-start="7629" selection-end="7629" vertical-scroll-proportion="0.7779851">
-          <folding />
+        <state line="201" column="55" selection-start="8673" selection-end="8673" vertical-scroll-proportion="0.09751434">
+          <folding>
+            <element signature="e#535#558#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
