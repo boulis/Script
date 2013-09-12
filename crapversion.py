@@ -48,7 +48,7 @@ audioPlan = [
      'Audience': {'':None},
     },
    # Get headphones then start part 1
-     {'Juliet': {'Julietstart':{1:None}},
+    {'Juliet': {'Julietstart':{1:None}},
      'Andrew': {'Andrewstart':{1:None}},
      'Susie':  {'Susiestart':{1:None}},
      'Angela': {'Angelastart':{1:None}},
