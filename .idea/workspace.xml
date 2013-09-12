@@ -7,10 +7,10 @@
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378945090421" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378955122273" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378893376653" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
-    <file path="/debugger.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378955099904" ignored="false" />
+    <file path="/debugger.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378955152664" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,7 @@
       <file leaf-file-name="debugger.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/debugger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="197" column="26" selection-start="7615" selection-end="7615" vertical-scroll-proportion="0.8484849">
+            <state line="194" column="1" selection-start="7405" selection-end="7405" vertical-scroll-proportion="0.75757575">
               <folding />
             </state>
           </provider>
@@ -551,7 +551,11 @@
       <created>1378945094633</created>
       <updated>1378945094633</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Trying to replicate errors + Trying a better way to recover from errors">
+      <created>1378955125960</created>
+      <updated>1378955125961</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -770,7 +774,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/debugger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="26" selection-start="7615" selection-end="7615" vertical-scroll-proportion="0.8484849">
+        <state line="194" column="1" selection-start="7405" selection-end="7405" vertical-scroll-proportion="0.75757575">
           <folding />
         </state>
       </provider>
