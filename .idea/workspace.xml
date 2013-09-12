@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debugger.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/debugger.py" afterPath="$PROJECT_DIR$/debugger.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378906325353" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378944531008" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378893376653" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
     <file path="/debugger.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378944427462" ignored="false" />
@@ -42,7 +42,7 @@
       <file leaf-file-name="debugger.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/debugger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="197" column="39" selection-start="7628" selection-end="7628" vertical-scroll-proportion="0.7878788">
+            <state line="197" column="35" selection-start="7624" selection-end="7624" vertical-scroll-proportion="0.7878788">
               <folding />
             </state>
           </provider>
@@ -539,7 +539,11 @@
       <created>1378906330639</created>
       <updated>1378906330639</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Second Show - 14 tracks">
+      <created>1378944534730</created>
+      <updated>1378944534730</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -757,7 +761,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/debugger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="39" selection-start="7628" selection-end="7628" vertical-scroll-proportion="0.7878788">
+        <state line="197" column="35" selection-start="7624" selection-end="7624" vertical-scroll-proportion="0.7878788">
           <folding />
         </state>
       </provider>
