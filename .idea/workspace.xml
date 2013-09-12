@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grantShow.py" afterPath="$PROJECT_DIR$/grantShow.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debugger.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378894387991" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378906325353" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378893376653" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
+    <file path="/debugger.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378944427462" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +30,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="grantShow.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="grantShow.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grantShow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="193" column="0" selection-start="7382" selection-end="7382" vertical-scroll-proportion="4.939394">
+            <state line="91" column="33" selection-start="3937" selection-end="3937" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="debugger.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/debugger.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="197" column="39" selection-start="7628" selection-end="7628" vertical-scroll-proportion="0.7878788">
               <folding />
             </state>
           </provider>
@@ -41,7 +51,7 @@
       <file leaf-file-name="showisk.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/showisk.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="371" column="64" selection-start="16671" selection-end="16671" vertical-scroll-proportion="0.0">
+            <state line="510" column="35" selection-start="0" selection-end="26125" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -68,6 +78,7 @@
       <list>
         <option value="$PROJECT_DIR$/showisk.py" />
         <option value="$PROJECT_DIR$/grantShow.py" />
+        <option value="$PROJECT_DIR$/debugger.py" />
       </list>
     </option>
   </component>
@@ -524,7 +535,11 @@
       <created>1378894391295</created>
       <updated>1378894391295</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Second Show - 14 tracks">
+      <created>1378906330639</created>
+      <updated>1378906330639</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -728,14 +743,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/showisk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="371" column="64" selection-start="16671" selection-end="16671" vertical-scroll-proportion="0.0">
+        <state line="510" column="35" selection-start="0" selection-end="26125" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grantShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="193" column="0" selection-start="7382" selection-end="7382" vertical-scroll-proportion="4.939394">
+        <state line="91" column="33" selection-start="3937" selection-end="3937" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/debugger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="197" column="39" selection-start="7628" selection-end="7628" vertical-scroll-proportion="0.7878788">
           <folding />
         </state>
       </provider>
