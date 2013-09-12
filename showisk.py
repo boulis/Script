@@ -414,7 +414,11 @@ class Show:
 		if event.headers['Begin'] == 'Yes' and event.headers['Direction'] == 'Received':
 			actorName = self.actor[event.headers['Uniqueid']]
 			# store the pressed digit, so that other threads can find it
-			self.pressedDTMF[actorName] = int(event.headers['Digit'])
+			try:
+				self.pressedDTMF[actorName] = int(event.headers['Digit'])
+			except ValueError:
+				print datetime.now(), 'DTMF', event.headers['Digit'], 'is not a number. IGNORE'
+				return
 			# notify the thread waiting for this by setting/trigering the right event
 			# if the event is not there, or is already set, then a thread is not waiting for it
 			if actorName in self.eventsDTMF and not self.eventsDTMF[actorName].is_set():
