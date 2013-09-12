@@ -206,42 +206,17 @@ class Show:
 		# Otherwise a call has to be answered for another one to start ringing, even if
 		# the originate commands are given from different threads
 		response = self.manager.originate(self.pathToTrunk + phone, caller_id=actorName, async=True, exten='callwait', context='testcall', priority='1')
-		print datetime.now(), 'Originating call to', actorName, phone, 'Response:', response
+		print datetime.now(), 'Originating call to', actorName, phone, 'Response:'
 
 
 		# wait for the call to be answered
 		self.eventsCallAnswer[actorName] = threading.Event()
 		self.eventsCallAnswer[actorName].wait(delay)
 		if self.eventsCallAnswer[actorName].is_set():
-			# if we do not need to press 1 print a success message and return.
-			if not press1needed:
-				print datetime.now(), 'Success establishing call to', actorName
-				self.phoneNum[actorName] = phone  # associate phone number with actor
-				self.playback(self.thankyou, actorName, dir='')
-				return True
-			sleep(1) # needs a small delay before the channel becomes valid for playback
-			# if the call is answered, ask for the actor to press 1 (to confirm real interaction)
-			self.playback(self.press1, actorName, dir='')
-			if self.waitToPress1(actorName, delay=delay):
-				print datetime.now(), 'Success establishing call to', actorName
-				self.phoneNum[actorName] = phone  # associate phone number with actor
-				self.playback(self.thankyou, actorName, dir='')
-				if reconnected: self.playback(self.whenReconnected, actorName, dir='')
-			else:
-				if self.nothuman:
-					self.playback(self.nothuman, actorName, dir='')
-				self.manager.hangup(self.channel[actorName])
-				print datetime.now(), 'Call answered but', actorName, 'did not press 1 within', delay, 'secs'
-				print datetime.now(), '======================WARNING! PERFORMANCE MUST BE RESTARTED, Please press CTRL Z and run python debuggrantShow.py==========================='
-				# remove this actor, channel, and unique ID from the corresponding dictionaries
-				chan = self.channel[actorName]
-				uniqID = self.uniqueID[actorName]
-				del self.channel[actorName]
-				del self.uniqueID[actorName]
-				del self.actor[uniqID]
-				del self.actorFromChan[chan]
-		else:
-			print datetime.now(), 'Call to', actorName, 'was NOT answered'
+			print datetime.now(), 'Success establishing call to', actorName
+			self.phoneNum[actorName] = phone  # associate phone number with actor
+			self.playback(self.thankyou, actorName, dir='')
+			return True
 
 
 	def _execute_plan(self, plan, actorName):
