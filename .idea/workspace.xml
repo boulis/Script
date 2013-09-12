@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05384c62-6b12-4955-aa67-fd8c1dabffdc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crapversion.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/debugger.py" afterPath="$PROJECT_DIR$/debugger.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/showiskdebug.py" afterPath="$PROJECT_DIR$/showiskdebug.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crapversion.py" afterPath="$PROJECT_DIR$/crapversion.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Script.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378958913355" ignored="false" />
+    <file path="/Dummy.txt" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378962851485" ignored="false" />
     <file path="/grantShow.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378893376653" ignored="false" />
     <file path="/showisk.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378735329691" ignored="false" />
     <file path="/debugger.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378959028467" ignored="false" />
     <file path="/showiskdebug.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378962633140" ignored="false" />
-    <file path="/crapversion.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378962838860" ignored="false" />
+    <file path="/crapversion.py" changelist="05384c62-6b12-4955-aa67-fd8c1dabffdc" time="1378962883712" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +44,7 @@
       <file leaf-file-name="crapversion.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crapversion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="195" column="26" selection-start="7476" selection-end="7476" vertical-scroll-proportion="0.72727275">
+            <state line="40" column="9" selection-start="2317" selection-end="2317" vertical-scroll-proportion="0.3030303">
               <folding />
             </state>
           </provider>
@@ -613,7 +611,11 @@
       <created>1378958915959</created>
       <updated>1378958915959</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Trying to replicate errors + Trying a better way to recover from errors">
+      <created>1378962854836</created>
+      <updated>1378962854837</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -848,7 +850,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crapversion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="26" selection-start="7476" selection-end="7476" vertical-scroll-proportion="0.72727275">
+        <state line="40" column="9" selection-start="2317" selection-end="2317" vertical-scroll-proportion="0.3030303">
           <folding />
         </state>
       </provider>

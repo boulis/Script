@@ -39,7 +39,7 @@ the function waitForDTMF
 
 audioPlan = [
     # Hi to humans
-    {'Juliet': {'ishuman':None},
+    k{'Juliet': {'ishuman':None},
      'Andrew': {'ishuman':None},
      'Susie': {'ishuman':None},
      'Angela': {'ishuman':None},
